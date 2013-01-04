@@ -1,0 +1,9 @@
+rm -rf forum10*
+rm -rf forum11*
+rm -rf forum12*
+rm -rf forum13*
+rm -rf forum14*
+rm -rf map
+rm -rf market
+rm -rf ticks
+rm -rf famranks.txt

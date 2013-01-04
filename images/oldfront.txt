@@ -1,0 +1,120 @@
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>3 March 2003</b></font></td></tr>
+<tr><td><font size="2">It has been a while since the last announcement here, I have been very busy lately... I keep hope to resume work on Ectroverse soon. A new beta round will start today ( 3 March ) at 16h gmt.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>25 January 2003</b></font></td></tr>
+<tr><td><font size="2">The first beta round just started!<br>Feel free to join and contribute to the development of Ectroverse.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>23 January 2003</b></font></td></tr>
+<tr><td><font size="2">Ectroverse will have its first beta round in 2 days! Registration will be possible starting the 24th, the round will start the 25 January at 16h GMT.<br><br>Ticks will be of 10 minutes, families and relations code will be completed by then.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>20 January 2003</b></font></td></tr>
+<tr><td><font size="2">What happened?<br><br>The hard disk where the game is hosted, a friend's computer, got full up to the last byte ( and it's not Ectroverse's fault ). Writing to the database started failling, most of it got currupted, even the forums... I'll see what can be done to recover them.<br><br>I also added code so the server will shut itself down if the server lacks space again, it's better than getting database corruption. It won't happen again.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>17 January 2003</b></font></td></tr>
+<tr><td><font size="2">As asked by most players, a new testing round has been started earlier today. What are the improvements since the last announcement here?<br>- Complete forums<br>- In-game messaging<br>- Portals research ( and portals upkeep, place your portals wisely )<br>- Family members marked online when online<br>- Option to see unexplored planets in map generation<br>- Fleets disband when unable to pay for upkeep<br>- FR losses calculated both from NW and planets counts<br>- Construction and planets summaries<br>- Family rankings<br>- Many, many other details...</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>13 January 2003, later</b></font></td></tr>
+<tr><td><font size="2">That was a difficult start of the round, I'm sorry for the 40 minutes delay!... I wasn't at home, and there was a serious bug I had to fix by telnet and emacs ( and I don't know how to use emacs, I'm a vi and nedit user ).<br><br>Thanks for your support! All features missing for a first beta round should be implemented during this round.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>13 January 2003</b></font></td></tr>
+<tr><td><font size="2">A new test round will start today, at 15h GMT!<br>Since the last announcement, forums were completed and several minor features were added. Complete families code should appear today. <a href="forum?forum=3&thread=14">See announcement</a><br><br>Feel free to post in the <a href="forum">Forums</a> to help me write the game you want.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>7 January 2003</b></font></td></tr>
+<tr><td><font size="2">Finally, Ectroverse has forums!<br>Many functions are still not implemented ( messages edition, deletion, etc. ), but it should become available in the next days.</td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>6 January 2003, later</b></font></td></tr>
+<tr><td><font size="2">Ectroverse moved!<br><br>As I just massively exceeded my upload transfer limits this month again ( this is getting expensive ), knighthk, an internet friend of mine, agreed to host Ectroverse through developpement!<br>Thanks a lot knighthk :)<br><br>Mortis started writing a guide for Ectroverse, the current version is available there : <a href="http://www23.brinkster.com/cbguide/">http://www23.brinkster.com/cbguide/</a></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>6 January 2003</b></font></td></tr>
+<tr><td><font size="2">I apologize, I just had to start a new testing round.<br><br>The server program is running on the same computer as gtk-gnutella ( a files sharing program ), which I use for, hrm... having backups of my movies. Gtk-gnutella was too zealous today, completely filling the hard disk, which Ectroverse didn't appreciate as writing to the database started failing! The result is a somewhat corrupted database, and fixing it would definitively take a while.<br><br>The version currently running has a few minor improvements ( market, aid, etc. ), which weren't really tested yet... so feel free to drop me a note if you encouter problems ( I'm aware that you can avoid decay through the market, it is of course temporary ).<br><br>Sorry again!</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>31 December 2002</b></font></td></tr>
+<tr><td><font size="2">Happy new year!<br><br>Quick note : I'm aware of the problems occuring when people gets more than 2147483648 research points, the number gets negative... It's actually a limit of our 32 bits processors, I'll have to store and compute these values as two integers, it will be fixed for the next round.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>30 December 2002</b></font></td></tr>
+<tr><td><font size="2">Happy holydays!<br>It has been a while since the last update... Many bugs were fixed ( bbuildings in construction count problem, a battle bug, etc. ) and a market was added since then. I was planning to start a new round with the new changes as soon as forums would be available, but I haven't heard of Tailchaser since then ( and updating the server program without restarting would requires converting the database, which I prefer to avoid as it can take time ). Hopefully, we'll have a first real round soon!</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>20 December 2002</b></font></td></tr>
+<tr><td><font size="2">I just fixed the bug in the forums that was making the program crash, but as threads now seem to disappear, I'll keep them disabled until Tailchaser goes bugs hunting its forums. A market should be available today.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>19 December 2002, much later</b></font></td></tr>
+<tr><td><font size="2">Thanks to Tailchaser, we now have forums!<br>Feel free to use them to suggest new ideas and share your comments with us.<br>Update: This first version of forums seems to be buggy ( it started to make the server program crash ), so they were disabled until I can investigate tomorrow...</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>19 December 2002, later</b></font></td></tr>
+<tr><td><font size="2">A little update<br>Exploration is no longuer unlimited, sending exploration ships now reduces fleet readiness.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>19 December 2002</b></font></td></tr>
+<tr><td><font size="2">Another problem, related to mass-building, has been found ( that's what testing rounds are for, right? :) ). I'll have time to investigate and fix it in a few hours.<br>Update : The bug has been located and incinerated.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>18 December 2002, later</b></font></td></tr>
+<tr><td><font size="2">Updates of the day :<br>- Fleet readiness<br>- Technology and military research have been implemented<br>- Bombers and cruisers now do provide support to attacking ground troops in phase #4 of battles</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>18 December 2002</b></font></td></tr>
+<tr><td><font size="2">The server program crashed earlier, as it did once a while ago. Compiled will full signals handling, it finally allowed me to hunt down and fix the problem, it should now run flawlessly again.<br><br>Tailchaser is working on the forums, I'll start the attack rules ( fleet readiness? morale?.. ) until we can complete the families code.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>17 December 2002, later</b></font></td></tr>
+<tr><td><font size="2">A small update<br>- Mass building<br>- Options to flee from battles<br>- Option to set the default action for fleets after a auccessful attack<br>- Several little fixes</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>17 December 2002</b></font></td></tr>
+<tr><td><font size="2">As it seem my friend's computer is now unreachable for an unknown reason ( it's not the first time actually ), I'll try hosting a version on my router. My IP isn't supposed to be static, but I did a little something which should keep the connection alive permanently... Is there anyone with a static IP, running an unix-based OS, willing to spare some bandiwdth to help this new game project? :)</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>14 December 2002</b></font></td></tr>
+<tr><td><font size="2">Thanks to Daz, the game now has some new graphics. Incorporating the new graphics is not yet complete, as it will require to change the structure of the game a bit.<br><br>The server program caught a signal earlier, shutting it down. It has been recompiled with full debugging informations and signals handling to locate the problem.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>12 December 2002</b></font></td></tr>
+<tr><td><font size="2">The server program was just updated :<br>- Players can generate maps displaying other empires planets, using the Map generation link or from the players page<br>- Buildings in construction and units stationned appear on the planets page<br>- An "irregularity" in the battle algorithm was fixed ( thanks Mortis )<br>I just converted the current database to the new format... assuming I didn't forget anything, it won't cause problems.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>9 December 2002, later</b></font></td></tr>
+<tr><td><font size="2">As it seems 5 minutes ticks are slightly too slow to really test attacking, I just reduced them to 2 minutes.</font></td></tr>
+</table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF" size="2"><b>9 December 2002</b></font></td></tr>
+<tr><td><font size="2">It has been a while since the last update, but several improvements were required to make attacks possible. What was added :<br>- News system<br>- Fleets movements, station, recall<br>- Portals, portals coverage<br>- Raze buildings<br>- Disband units<br>- Attacks<br>- Another IE compatibility problem fixed<br>The battles code was not abundantly tested yet, encountering problems is not impossible ( although unlikely ). Tailchaser has a first version of forums working, but we'll still be using the <a href="http://www.icwizards.net/modules.php?name=Forums&file=viewforum&f=18">icwizards forums</a> for the moment..<br><br>Hopefully, this will be the last "pre-alpha" round, the next one should have all the most important features ( forums, in game messaging, completed famlies code, completed research, market, spells, operations, etc. ).<br><br>Ticks are set for 5 minutes each, you can attack anyone above 33% of your NW ( FR, or other similar mechanisms, are not yet implemented ), and building of exploration ships is still unlimited. It is actually possible to completely destroy players fleet... In the next version, fleeing from battles will be possible to avoid being annhilated when opponents forces are too strong.<br><br>As always, fee free to share your comments, suggestions, new ideas ( and bugs report ) in the <a href="http://www.icwizards.net/modules.php?name=Forums&file=viewforum&f=18">forum</a>.<br><a href="prealpha2.html">Pre-alpha 2 unsorted rankings</a><br><a href="prealpha1.html">Pre-alpha 1 unsorted rankings</a></font></td></tr>
+</table><br><br>

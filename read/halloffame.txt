@@ -1,0 +1,27 @@
+<html><head><style>body{font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;}a{text-decoration:none;}a:hover{color:#00AADD;}</style><title>Ectroverse</title></head><body
+bgcolor="#000000" text="#D7D7FF" link="#7FFFFF" vlink="#7FFFFF"
+alink="#7FFFFF" topmargin="0" leftmargin="0"><center><table width="100%"
+border="0" cellpadding="0" cellspacing="0"><tr><td align="center"><img
+src="ectro_03.jpg" width=350 height=80  alt="ect
+Top"></td></tr><tr><td><table width="100%" border="0" cellpadding="0"
+cellspacing="0"><tr><td background="ectro_12.jpg" width="45%">&nbsp;</td><td
+align="center" width="10%"><img src="ectro_06.jpg" width="450"
+height="75"></td><td background="ectro_12.jpg"
+width="45%">&nbsp;</td></tr></table></tr></td><tr><td align="center"><img
+src="ectro_09.jpg" width="660" height="100"></td></tr><tr><td
+background="ectro_12.jpg" align="center"><table width="660" height="75"
+border="0" cellpadding="0" cellspacing="0"><tr><td background="ectro_13.jpg"
+align="right" valign="middle"><b><a href="/">Main</a> | <a
+href="register">Register</a> | <a href="gettingstarted">Getting Started</a> | <a href="forum">Forums</a> | <a
+href="faq">FAQ</a> | <a
+href="halloffame">Hall of fame</a> | <a
+href="status">Server</a></b></td></tr></table></td></tr></table><table
+width="100%" border="0" cellpadding="0" cellspacing="0"
+background="mbg.gif"><tr><td width="7%">&nbsp;</td><td width="86%"
+valign="top"><table width="100%" border="0" cellpadding="2"
+cellspacing="0"><tr><td background="ectro_16.jpg" height="15"><font
+color="#FFFFFF" size="2"><b>Rounds
+rankings</b></font></td></tr><tr><td><font size="2"><br>Round 0 - Current
+round<br><a href="famranks">Families</a> - <a
+href="rankings">Players</a><br><br></font></td></tr></table><br><br></td><td
+width="7%">&nbsp;</td></tr></table></center></body></html>

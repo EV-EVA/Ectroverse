@@ -1,0 +1,191 @@
+<html>
+<head>
+<style>body{font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;}a{text-decoration:none;}a:hover{color:#00AADD;}</style>
+<title>Ectroverse</title>
+</head>
+
+<body bgcolor="#000000" text="#D7D7FF" link="#7FFFFF" vlink="#7FFFFF"
+alink="#7FFFFF" topmargin="0" leftmargin="0">
+
+<center>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="center"><img src="ectro_03.jpg" width=350 height=80  alt="ect
+Top"></td></tr>
+
+<tr><td><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td background="ectro_12.jpg" width="45%">&nbsp;</td>
+<td align="center" width="10%"><img src="ectro_06.jpg" width="450"
+height="75"></td>
+<td background="ectro_12.jpg" width="45%">&nbsp;</td>
+</tr></table></tr></td>
+
+<tr><td align="center"><img src="ectro_09.jpg" width="660"
+height="100"></td></tr>
+<tr><td background="ectro_12.jpg" align="center"><table width="660"
+height="75" border="0" cellpadding="0" cellspacing="0">
+<tr><td background="ectro_13.jpg" align="right" valign="middle"><b><a
+href="/">Main</a> | <a href="register">Register</a> | <a
+href="forum">Forums</a> | <a href="faq">FAQ</a> | <a
+href="contact">Contact</a> | <a href="halloffame">Hall of fame</a> | <a
+href="status">Server</a></b></td></tr>
+</table>
+</td></tr></table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"
+background="mbg.gif">
+<tr><td width="7%">&nbsp;</td><td width="86%" valign="top">
+
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF"
+size="2"><b>Getting started in the galaxy of Ectroverse</b></font></td></tr>
+<tr><td><font size="2">
+This page is a guide to new players on how to get started. It is important
+to read this to get the best possible experience when first playing!<br>
+
+<br><b>Creating an account:</b><br><br>
+<a href="#a0">0. Registering the account.</a><br>
+<a href="#a1">1. The user name and faction name.</a><br>
+<a href="#a2">2. Joining an empire.</a><br>
+<a href="#a3">3. Choosing your race.</a><br>
+<a href="#a4">4. Completion and logging in.</a><br>
+</a><br>
+
+<br><b>Playing the game:</b><br><br>
+<a href="#b0">0. Resources & Buildings.</a><br>
+<a href="#b1">1. Planets.</a><br>
+<a href="#b2">2. Research.</a><br>
+<a href="#b3">3. Military.</a><br>
+</a><br>
+
+<br><b>Tips:</b><br><br>
+<a href="#c0">0. Map generation.</a><br>
+<a href="#c1">1. Fleet page.</a><br>
+<a href="#c2">2. Account page.</a><br>
+</a><br>
+
+</td></tr></table><br><br>
+
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF"
+size="2"><b>Creating an account:</b></font></td></tr>
+<tr><td><font size="2"><br>
+
+<a name="a0"><b><i>0. Registering the account.</i></b></a><br>
+The great thing about Ectroverse is that the signup is simple. You won't
+need to input your e-mail address and no other activation is required.
+<br><br>
+
+<a name="a1"><b><i>1. The user name and faction name.</i></b></a><br>
+Your user name is something personal. Other players won't see this. 
+<br>Your Faction name however, is your handle in the game. Choose
+carefully.<br><br>
+
+<a name="a2"><b><i>2. Joining an Empire.</i></b></a><br>
+Being part of an Empire is one of the most important aspects of the game.
+<br>You start out small and will need other players to grow. 
+<br> Know anyone in the game? Ask them for their empire
+number and password.
+<br>
+<br> 
+If you want to start an Empire of your own, look at the <a
+href="famranks">Empire</a> rankings and pick a number not yet in the list!
+<br>Want to team up with random players? Leave blank. But remember, be a teamplayer and
+you'll earn a rank in the Empire.<br><br>
+
+<a name="a3"><b><i>3. Choosing your race.</i></b></a><br>
+You are well on your way to making a name for yourself.<br> But how will people
+remember you? As an aggressive attacker? A proud and rich Energy provider? A
+self made and self sufficient powerhouse?
+<br>
+<br>
+Your race will decide which path you will walk. 
+<br>View the stats for each race <a href="races">here</a>.<br><br>
+
+<a name="a4"><b><i>4. Completion and logging in.</i></b></a><br>
+Congratulations. You have created an account, chosen an Empire to fight for
+and selected your race.<br> You are now ready to explore, build and fight your
+way to the top.<br><br>
+
+</td></tr></table><br><br>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF"
+size="2"><b>Playing the game:</b></font></td></tr>
+<tr><td><font size="2"><br>
+
+<a name="b0"><b><i>0. Resources & Buildings.</i></b></a><br>
+Your main concern is growth. You need to spend your resources by making
+resources.
+<br>How do you do that? Simple. Build buildings on your planets.
+<br>There are 4 resources in the galaxy. Energy, Minerals, Crystal and
+Ectrolium. <br>Most buildings need 3 of the 4 resources to be built, so you
+need to plan your building a bit at the start.<br><br>
+
+<a name="b1"><b><i>1. Planets.</i></b></a><br>
+Exploring and conquering planets is your way of getting to the top.
+<br>You start out with 4 exploration ships. Send these out into the galaxy
+to colonise planets.
+<br>Don't worry, you'll be building a lot of them soon enough. Afterall, who
+is pleased with <i>just</i> 4 planets....<br><br>
+
+<a name="b2"><b><i>2. Research.</i></b></a><br>
+Get smarter and do it smart.
+<br>Research is a very important aspect of the game.
+<br>Head over to your Research tab and distribute points wisely!<br><br>
+
+<a name="b3"><b><i>3. Military.</i></b></a><br>
+A big fleet makes you strong, but they also increase your Networth.
+<br>A higher networth makes it harder to grow.
+<br>Build up your fleet steadily, don't go overboard.
+<br>And remember, you need to pay upkeep for your little Cruisers too!<br><br>
+
+</td></tr></table><br><br>
+
+
+
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+<tr><td background="ectro_16.jpg" height="15"><font color="#FFFFFF"
+size="2"><b>Tips:</b></font></td></tr>
+<tr><td><font size="2"><br>
+
+<a name="c0"><b><i>0. Map generation</i></b></a><br>
+The galaxy map is the place where you'll find planets to explore and
+conquer... But it is easy to lose your way and location.
+<br>Luckily you can generate a map using the Generation page.
+<br>You can filter away planets that are already owned, that are of your
+Empire or are that of enemies!
+<br>A usefull tool to say the least.<br><br>
+
+<a name="c1"><b><i>1. Fleet page.</i></b></a><br>
+Check your fleet page. In the top right you see <b>"Fleet Orders"</b>,
+select the dropdown and chose <b>"Wait in System"</b> instead of the default
+one.
+<br>It is easy to forget this option, and spend 10 minutes wondering where
+your mighty fleet has gone!.<br><br>
+
+<a name="c2"><b><i>2. Account page.</i></b></a><br>
+This will here page allows you to alter your Faction name when the game
+hasn't started yet.
+<br>Once the time starts flowing, you won't be able to change your name
+until the next round has started.<br><br>
+
+
+</td></tr></table><br><br>
+
+
+</td></tr></table><br><br>
+
+
+<br><br><br><br><br><br>
+
+
+</td><td width="7%">&nbsp;</td></tr></table>
+
+</center>
+
+</body>
+
+</html>
+
