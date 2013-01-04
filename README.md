@@ -4,10 +4,10 @@ To install the game:
 Edit config.h and change the directory lines at the bottom to your Ectroverse folders.
 
 Run:
-$ make map
-$ ./map
-$ make
-$ ./sv
+* make map
+* ./map
+* make
+* ./sv
 
 Congrats, the server is running on port 9122 of your localhost.
 Login with:
