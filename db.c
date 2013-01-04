@@ -265,7 +265,7 @@ FILE *dbFileGenOpen( int num )
     
   if( !( dbFilePtr[num] = fopen( szSource, "rb+" ) ) )
   {
-    printf( "Error %02d, could not open %s\n", errno, dbFileList[num] );
+    printf( "Error %02d, could not open %s\n", errno, szSource );
     return 0;
   }
   return dbFilePtr[num];
