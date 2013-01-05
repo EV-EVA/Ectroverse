@@ -265,7 +265,7 @@ FILE *dbFileGenOpen( int num )
     
   if( !( dbFilePtr[num] = fopen( szSource, "rb+" ) ) )
   {
-    printf( "Error %02d, could not open %s\n", errno, dbFileList[num] );
+    printf( "Error %02d, could not open %s\n", errno, szSource );
     return 0;
   }
   return dbFilePtr[num];
@@ -454,6 +454,7 @@ int dbInit()
   dbUserMainDef maind;
   dbMainPlanetDef planetd;
   FILE *file;
+  char szUsersFile[500];
   
   if( chdir( DB_DIRECTORY ) == -1 )
   {
@@ -510,7 +511,9 @@ int dbInit()
   if( !( dbFileGenOpen( DB_FILE_USERS ) ) )
   {
     printf( "Users database not found, creating\n" );
-    if( !( dbFilePtr[DB_FILE_USERS] = fopen( dbFileList[DB_FILE_USERS], "wb+" ) ) )
+    // Create a path to the users file in the same way as dbFileGenOpen
+		sprintf( szUsersFile, dbFileList[DB_FILE_USERS], USER_DIRECTORY );
+    if( !( dbFilePtr[DB_FILE_USERS] = fopen( szUsersFile, "wb+" ) ) )
     {
       printf( "Error, could not create users database!\n" );
       return 0;
