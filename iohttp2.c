@@ -77,12 +77,12 @@ int iohttpIdentify( svConnectionPtr cnt, int action )
  {
   if( action & 8 )
    iohttpBase( cnt, 1|2 );
-  if( stat( IOHTTP_READ_DIRECTORY "/login.txt", &stdata ) != -1 )
+  if( stat( IOHTTP_READ_DIRECTORY "/login.html", &stdata ) != -1 )
   {
    if( ( data = malloc( stdata.st_size + 1 ) ) )
    {
     data[stdata.st_size] = 0;
-    if( ( file = fopen( IOHTTP_READ_DIRECTORY "/login.txt", "rb" ) ) )
+    if( ( file = fopen( IOHTTP_READ_DIRECTORY "/login.html", "rb" ) ) )
     {
      fread( data, 1, stdata.st_size, file );
      svSendString( cnt, data );
@@ -1835,12 +1835,12 @@ void iohttpFunc_hq( svConnectionPtr cnt )
  svSendPrintf( cnt, "<table width=\"400\" border=\"0\"><tr><td align=\"center\">Empire : #%d<br>Planets : %d<br>Population : %lld0<br>Networth : %lld</td>", maind.empire, maind.planets, maind.ressource[CMD_RESSOURCE_POPULATION], maind.networth );
  svSendPrintf( cnt, "<td align=\"center\">Fleet readiness : %d%%<br>Psychics readiness : %d%%<br>Agents readiness : %d%%<br>Home planet : %d,%d:%d</td></tr></table><br>", maind.readiness[0] >> 16, maind.readiness[1] >> 16, maind.readiness[2] >> 16, ( maind.home >> 8 ) & 0xFFF, maind.home >> 20, maind.home & 0xFF );
 
- if( stat( IOHTTP_READ_DIRECTORY "/hq.txt", &stdata ) != -1 )
+ if( stat( IOHTTP_READ_DIRECTORY "/hq.html", &stdata ) != -1 )
  {
   if( ( data = malloc( stdata.st_size + 1 ) ) )
   {
    data[stdata.st_size] = 0;
-   if( ( file = fopen( IOHTTP_READ_DIRECTORY "/hq.txt", "rb" ) ) )
+   if( ( file = fopen( IOHTTP_READ_DIRECTORY "/hq.html", "rb" ) ) )
    {
     fread( data, 1, stdata.st_size, file );
     svSendString( cnt, data );
