@@ -19,7 +19,11 @@ To change this, look for lines 2233 and 2238 in cmd.c file.
 KNOWN BUGS - Very annoying and need to go:
 * Some issues with Artefact effects.
 * Overbuilding bug: sometimes a planet in the list is skipped.
-* Logout when a new player registers.
+* Logout when a new player registers: <br>
+  <i>when a player logins, the server stores 4 hashes in a cookie and sends to client
+  the server also remembers those 4 hashes so it can identify the client those hashes
+  get deleted when register happens</i>
+
 * Merge Fleet does not work. Splitting does.
 * ... ?
 
