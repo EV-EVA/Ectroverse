@@ -1,5 +1,4 @@
 
-
 unsigned char iohttpEnd[2][5] = { "\r\n\r\n", "\n\n" };
 int iohttpEndSize[2] = { 4, 2 };
 
@@ -165,27 +164,27 @@ void InitHTTP()
   file = iohttpFileAdd( 0 );
   file->type = 2;
   sprintf( file->path, "/" );
-  sprintf( file->fileread, "front.txt" );
+  sprintf( file->fileread, "front.html" );
 
   file = iohttpFileAdd( 0 );
   file->type = 2;
   sprintf( file->path, "/possibilities" );
-  sprintf( file->fileread, "possibilities.txt" );
+  sprintf( file->fileread, "possibilities.html" );
 
   file = iohttpFileAdd( 0 );
   file->type = 2;
   sprintf( file->path, "/faq" );
-  sprintf( file->fileread, "faq.txt" );
+  sprintf( file->fileread, "faq.html" );
 
   file = iohttpFileAdd( 0 );
   file->type = 2;
   sprintf( file->path, "/gettingstarted" );
-  sprintf( file->fileread, "gettingstarted.txt" );
+  sprintf( file->fileread, "gettingstarted.html" );
 
   file = iohttpFileAdd( 0 );
   file->type = 2;
   sprintf( file->path, "/halloffame" );
-  sprintf( file->fileread, "halloffame.txt" );
+  sprintf( file->fileread, "halloffame.html" );
 
   file = iohttpFileAdd( 0 );
   file->type = 1;
