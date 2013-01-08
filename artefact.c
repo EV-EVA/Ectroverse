@@ -15,11 +15,11 @@ unsigned char *artefactName[ARTEFACT_NUMUSED] =
 "Einstein's Manual",
 "Larger appartement", 
 "The Foohon Ancenstry",
-"Cloak of Invisibility", 
+"Military Outpost", 
 
-"Reversed Mystical Cycle", 
-"Delayed Artefact",
-"Granary",
+"Mineral Mine", 
+"Book of Revelations",
+"Grand Silo",
 "Uranium Mine",
 
 "Ether Gardens",
@@ -28,14 +28,14 @@ unsigned char *artefactName[ARTEFACT_NUMUSED] =
 
 unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 {
-"The <b>Einstein's Manual</b> gives +1% max research for every field with every 5% of tech research you have!",
+"<b>Einstein's Manual</b> gives +1% maximum research for every field, for every 5% of technology research you have!",
 "The <b>Larger appartement</b> grants your cities living space for 10000 more people!",
-"The <b>Foohon Ancestry</b> gives all races 1 RP per 10000 population per tick extra!",
-"The <b>Cloak Of Invisibility</b> always hides your identity when performing operations!",
+"The <b>Foohon Ancestry</b> gives all races 1 Research Point per 10000 population!",
+"The <b>Military Outpost</b> halves your units upkeep, but reduces you energy production by 12%!",
 
-"The <b>Reversed Mystical Cycle</b> appears to do nothing at all!",
-"The <b>Delayed Artefact</b> will double the effects of your artefacts if you manage to keep it for 144 weeks!",
-"The <b>Granary</b> halves the decay of energy and crystal!",
+ "The <b>Mineral Mine</b> increases mineral production by 20%, but decreases ectrolium and crystal production by 5%!",
+"The <b>Book of Revelations</b> increases your culture research by 50% and decreases your technology by 25%!",
+"The <b>Grand Silo</b> halves the decay of energy and crystal!",
 "The <b>Uranium Mine</b> lowers fission upkeep by 15% and increases output by 20%!", 
 
 "The <b>Ether Gardens</b> increase your energy production by 10%!",

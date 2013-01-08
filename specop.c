@@ -614,11 +614,11 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 		  newd[6] = maind.empire;
 		  
 		  //ARTI CODE Cloak Of Invisibility
-			if(maind.artefacts & ARTEFACT_8_BIT)
+			/*if(maind.artefacts & ARTEFACT_8_BIT)
 			{
 				newd[5] = 0;  //Report ops by admin
 				newd[6] = 0;
-			}
+			}*/
 			
 		  if(id != planetd.owner)
 		  	cmdUserNewsAdd( planetd.owner, newd, CMD_NEWS_FLAGS_ATTACK );

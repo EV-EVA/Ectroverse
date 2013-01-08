@@ -373,8 +373,8 @@ svDebugTickPass = 1 + 10000;
 		if(mainp->artefacts & ARTEFACT_2_BIT)
 			planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+1000) ) );
 		//ARTI CODE Larger appartement + delayed
-		if((mainp->artefacts & ARTEFACT_2_BIT)&&(mainp->articount >= 144))
-			planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+2000) ) );
+		//if((mainp->artefacts & ARTEFACT_2_BIT)&&(mainp->articount >= 144))
+		//	planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+2000) ) );
 		
 svDebugTickPass = 2 + 10000;
 		
@@ -594,8 +594,8 @@ svDebugTickId = user->id;
     }
     
     //Arti count Delayed artefact
-		if(maind.artefacts & ARTEFACT_32_BIT)
-			maind.articount++;
+	//	if(maind.artefacts & ARTEFACT_32_BIT)
+	//		maind.articount++;
 			
 svDebugTickPass = 2;
 
@@ -704,8 +704,8 @@ svDebugTickPass = 5;
 				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
 								
 			//ARTI CODE Foohon Ancestry & Delayed Artefact
-			if((maind.artefacts & ARTEFACT_4_BIT)&&(maind.articount >= 144))
-				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );	
+			//if((maind.artefacts & ARTEFACT_4_BIT)&&(maind.articount >= 144))
+			//	fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );	
 			
 			
 		maind.research[a] += cmdRace[maind.raceid].researchpoints[a] * fa;
@@ -728,22 +728,22 @@ svDebugTickPass = 6;
       	fa += (maind.research[CMD_RESEARCH_TECH]/5);	
       
       //ARTI CODE Einstein's Manual and delayed	
-    	if((maind.artefacts & ARTEFACT_1_BIT)&&(maind.articount >= 144))
-    	{
-    		fa -= (maind.research[CMD_RESEARCH_TECH]/5);	
-      	fa += ((maind.research[CMD_RESEARCH_TECH]/5)*2); 	
-      }
+    	//if((maind.artefacts & ARTEFACT_1_BIT)&&(maind.articount >= 144))
+    	//{
+    	//	fa -= (maind.research[CMD_RESEARCH_TECH]/5);	
+      	//fa += ((maind.research[CMD_RESEARCH_TECH]/5)*2); 	
+      //}
       
     //ARTI CODE book of revelation
-		//if((maind.artefacts & ARTEFACT_BOOK_BIT)&&(a == CMD_RESEARCH_WELFARE))
-		//  fa += 60;
+		if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
+		  fa += 50;
 			
-		//ARTI CODE book of revelation
-		//if((maind.artefacts & ARTEFACT_BOOK_BIT)&&(a == CMD_RESEARCH_TECH))
-		//	fa -= 30;
+	//	ARTI CODE book of revelation
+		if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_TECH))
+			fa -= 25;
       
     //ARTI CODE Cystal summoner
-		//if((maind.artefacts & ARTEFACT_64_BIT)&&(a == CMD_RESEARCH_WELFARE))
+		//if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
 		//	fa += 70;
 		//ARTI CODE Elit strategist
 		//if((maind.artefacts & ARTEFACT_128_BIT)&&(a == CMD_RESEARCH_MILITARY))
@@ -779,12 +779,12 @@ svDebugTickPass = 7;
 	if(maind.artefacts & ARTEFACT_ETHER_BIT)
 		fa *= 1.10;	
 	//ARTI CODE Ether Garden + Delayed Artefact
-	if((maind.artefacts & ARTEFACT_ETHER_BIT)&&(maind.articount >= 144))
-		fa *= 1.10;	
+	//if((maind.artefacts & ARTEFACT_ETHER_BIT)&&(maind.articount >= 144))
+	//	fa *= 1.10;	
 		
 	//ARTI CODE Moral obelisk
-	//if(maind.artefacts & ARTEFACT_8_BIT)
-	//	fa *= 0.88;	
+	if(maind.artefacts & ARTEFACT_8_BIT)
+		fa *= 0.88;	
 			
 	fb = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ENERGY] * ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_ENERGY] );
 
@@ -812,8 +812,8 @@ svDebugTickPass = 7;
 	if(maind.artefacts & ARTEFACT_64_BIT)
 	fa /= 2;	
 	//ARTI CODE Granary + delayed
-	if((maind.artefacts & ARTEFACT_64_BIT)&&(maind.articount >= 144))
-	fa /= 2;
+	//if((maind.artefacts & ARTEFACT_64_BIT)&&(maind.articount >= 144))
+	//fa /= 2;
 		
   maind.infos[5] = fa * (double)maind.ressource[CMD_RESSOURCE_ENERGY];
 
@@ -876,8 +876,8 @@ svDebugTickPass = 8;
 		if(maind.artefacts & ARTEFACT_64_BIT)
 		fa /= 2;
 		//ARTI CODE Granary + delayed
-		if((maind.artefacts & ARTEFACT_64_BIT)&&(maind.articount >= 144))
-			fa /= 2;
+		//if((maind.artefacts & ARTEFACT_64_BIT)&&(maind.articount >= 144))
+		//	fa /= 2;
     	
     maind.infos[10] = fa * (double)maind.ressource[CMD_RESSOURCE_CRYSTAL];
     
@@ -909,11 +909,11 @@ svDebugTickPass = 8;
 	//	maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 1.10;
 		
 	//ARTI CODE Exclusivity mine
-	//if(maind.artefacts & ARTEFACT_4_BIT)
-	//{
-	//	maind.infos[CMD_RESSOURCE_MINERAL] *= 1.20;
-	//	maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 0.95;
-	//}
+	if(maind.artefacts & ARTEFACT_16_BIT)
+	{
+		maind.infos[CMD_RESSOURCE_MINERAL] *= 1.20;
+		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 0.95;
+	}
 		
 svDebugTickPass = 9;
 
