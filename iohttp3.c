@@ -407,12 +407,12 @@ void iohttpFunc_logout( svConnectionPtr cnt )
   svSendPrintf( cnt, "Set-Cookie: USRID=%04x%04x%04x%04x%04x; path=/\n", 0, 0, 0, 0, 0 );
   svSendString( cnt, "Content-Type: text/html\n\n" );
 
-  if( stat( IOHTTP_READ_DIRECTORY "/front.txt", &stdata ) != -1 )
+  if( stat( IOHTTP_READ_DIRECTORY "/front.html", &stdata ) != -1 )
   {
     if( ( data = malloc( stdata.st_size + 1 ) ) )
     {
       data[stdata.st_size] = 0;
-      if( ( file = fopen( IOHTTP_READ_DIRECTORY "/front.txt", "rb" ) ) )
+      if( ( file = fopen( IOHTTP_READ_DIRECTORY "/front.html", "rb" ) ) )
       {
         fread( data, 1, stdata.st_size, file );
         svSendString( cnt, data );
