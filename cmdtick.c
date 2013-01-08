@@ -143,11 +143,10 @@ void cmdTickGenRanks()
 
 
 		//ARTI CODE Circus
-		if( empirep[stats[a+0]].artefacts & ARTEFACT_4_BIT )
-			fprintf( file, " %d</td><td><a style=\"color:#FE2EF7\" href=\"empire?id=%d\">", b, stats[a+0] );
-		else
-			fprintf( file, " %d</td><td><a href=\"empire?id=%d\">", b, stats[a+0] );
-    
+	//	if( empirep[stats[a+0]].artefacts & ARTEFACT_4_BIT )	//fprintf( file, " %d</td><td><a style=\"color:#FE2EF7\" href=\"empire?id=%d\">", b, stats[a+0] );
+	//	else
+			
+	fprintf( file, " %d</td><td><a href=\"empire?id=%d\">", b, stats[a+0] );
   	if( empirep[stats[a+0]].name[0] )
       fprintf( file, "%s #%d", empirep[stats[a+0]].name, stats[a+0] );
     else
@@ -701,13 +700,12 @@ svDebugTickPass = 5;
         	fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
 		
 			//ARTI CODE Foohon Ancestry
-			/*if(maind.artefacts & ARTEFACT_16_BIT)
+			if(maind.artefacts & ARTEFACT_4_BIT)
 				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
 								
 			//ARTI CODE Foohon Ancestry & Delayed Artefact
-			if((maind.artefacts & ARTEFACT_16_BIT)&&(maind.articount >= 144))
+			if((maind.artefacts & ARTEFACT_4_BIT)&&(maind.articount >= 144))
 				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );	
-			*/
 			
 			
 		maind.research[a] += cmdRace[maind.raceid].researchpoints[a] * fa;
@@ -726,15 +724,15 @@ svDebugTickPass = 6;
       fa = cmdRace[maind.raceid].researchmax[a];
       
       //ARTI CODE Einstein's Manual
-      /*if(maind.artefacts & ARTEFACT_8_BIT)
+      if(maind.artefacts & ARTEFACT_1_BIT)
       	fa += (maind.research[CMD_RESEARCH_TECH]/5);	
       
       //ARTI CODE Einstein's Manual and delayed	
-    	if((maind.artefacts & ARTEFACT_8_BIT)&&(maind.articount >= 144))
+    	if((maind.artefacts & ARTEFACT_1_BIT)&&(maind.articount >= 144))
     	{
     		fa -= (maind.research[CMD_RESEARCH_TECH]/5);	
       	fa += ((maind.research[CMD_RESEARCH_TECH]/5)*2); 	
-      }*/
+      }
       
     //ARTI CODE book of revelation
 		//if((maind.artefacts & ARTEFACT_BOOK_BIT)&&(a == CMD_RESEARCH_WELFARE))

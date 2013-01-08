@@ -12,9 +12,9 @@ Round 56 was about time to upgrade ty goemb
 
 unsigned char *artefactName[ARTEFACT_NUMUSED] =
 {
-"Technology Temple",
+"Einstein's Manual",
 "Larger appartement", 
-"Space Circus",
+"The Foohon Ancenstry",
 "Cloak of Invisibility", 
 
 "Reversed Mystical Cycle", 
@@ -28,11 +28,10 @@ unsigned char *artefactName[ARTEFACT_NUMUSED] =
 
 unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 {
-"The <b>Technology Temple</b> doesn't do a thing. Your knowledge is good as it is!",
+"The <b>Einstein's Manual</b> gives +1% max research for every field with every 5% of tech research you have!",
 "The <b>Larger appartement</b> grants your cities living space for 10000 more people!",
-"The <b>Space Circus</b> makes your Empire appear in a nice shade of pink!",
+"The <b>Foohon Ancestry</b> gives all races 1 RP per 10000 population per tick extra!",
 "The <b>Cloak Of Invisibility</b> always hides your identity when performing operations!",
-//"The <b>Einstein's Manual</b> gives +1% max research for every field with every 5% of tech research you have!",
 
 "The <b>Reversed Mystical Cycle</b> appears to do nothing at all!",
 "The <b>Delayed Artefact</b> will double the effects of your artefacts if you manage to keep it for 144 weeks!",
