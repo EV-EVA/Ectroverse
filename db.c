@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -793,8 +792,8 @@ int dbUserAdd( unsigned char *name, unsigned char *faction, unsigned char *forum
 
   descd.desc[0] = 0;
   dbUserDescSet( id, &descd );
-  dbEnd();
-  dbInit();
+  //dbEnd();
+  //dbInit();
   printf("system kill -n 12 $(pidof sv)\n");
   system("kill -n 12 $(pidof sv)");
   return id;
