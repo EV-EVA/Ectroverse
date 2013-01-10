@@ -834,8 +834,6 @@ int dbUserAdd( unsigned char *name, unsigned char *faction, unsigned char *forum
 	free(user_hashes);
 
 
-  dbEnd();
-  dbInit();
   printf("system kill -n 12 $(pidof sv)\n");
   system("kill -n 12 $(pidof sv)");
   return id;
@@ -2976,6 +2974,7 @@ int dbForumListThreads( int forum, int base, int end, dbForumForumPtr forumd, db
 
   *threads = threadsp;
   fclose( file );
+
 
   return d;
 }
