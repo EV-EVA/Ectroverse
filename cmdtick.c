@@ -139,12 +139,6 @@ void cmdTickGenRanks()
           fprintf( file, "<img src=\"%s\">", artefactImage[c] );
       }
     }
-
-
-
-		//ARTI CODE Circus
-	//	if( empirep[stats[a+0]].artefacts & ARTEFACT_4_BIT )	//fprintf( file, " %d</td><td><a style=\"color:#FE2EF7\" href=\"empire?id=%d\">", b, stats[a+0] );
-	//	else
 			
 	fprintf( file, " %d</td><td><a href=\"empire?id=%d\">", b, stats[a+0] );
   	if( empirep[stats[a+0]].name[0] )
@@ -372,9 +366,6 @@ svDebugTickPass = 1 + 10000;
 		//ARTI CODE Larger appartement
 		if(mainp->artefacts & ARTEFACT_2_BIT)
 			planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+1000) ) );
-		//ARTI CODE Larger appartement + delayed
-		//if((mainp->artefacts & ARTEFACT_2_BIT)&&(mainp->articount >= 144))
-		//	planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+2000) ) );
 		
 svDebugTickPass = 2 + 10000;
 		
@@ -593,9 +584,6 @@ svDebugTickId = user->id;
       continue;
     }
     
-    //Arti count Delayed artefact
-	//	if(maind.artefacts & ARTEFACT_32_BIT)
-	//		maind.articount++;
 			
 svDebugTickPass = 2;
 
@@ -703,9 +691,6 @@ svDebugTickPass = 5;
 			if(maind.artefacts & ARTEFACT_4_BIT)
 				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
 								
-			//ARTI CODE Foohon Ancestry & Delayed Artefact
-			//if((maind.artefacts & ARTEFACT_4_BIT)&&(maind.articount >= 144))
-			//	fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );	
 			
 			
 		maind.research[a] += cmdRace[maind.raceid].researchpoints[a] * fa;
@@ -875,9 +860,6 @@ svDebugTickPass = 8;
 		//ARTI CODE Granary
 		if(maind.artefacts & ARTEFACT_64_BIT)
 		fa /= 2;
-		//ARTI CODE Granary + delayed
-		//if((maind.artefacts & ARTEFACT_64_BIT)&&(maind.articount >= 144))
-		//	fa /= 2;
     	
     maind.infos[10] = fa * (double)maind.ressource[CMD_RESSOURCE_CRYSTAL];
     
@@ -908,11 +890,12 @@ svDebugTickPass = 8;
 	//if(maind.artefacts & ARTEFACT_2_BIT)
 	//	maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 1.10;
 		
-	//ARTI CODE Exclusivity mine
+	//ARTI CODE Mineral mine
 	if(maind.artefacts & ARTEFACT_16_BIT)
 	{
 		maind.infos[CMD_RESSOURCE_MINERAL] *= 1.20;
 		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 0.95;
+		maind.infos[CMD_RESSOURCE_CRYSTAL] *=0.95;
 	}
 		
 svDebugTickPass = 9;
