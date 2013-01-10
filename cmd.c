@@ -1832,7 +1832,7 @@ int cmdExecute( svConnectionPtr cnt, int *cmd, void *buffer, int size )
     }
     if( !( b ) )
     {
-      cmdErrorString = "No units are stationned on this planet";
+      cmdErrorString = "No units are stationed on this planet";
       return -3;
     }
     fleetd.order = CMD_FLEET_ORDER_CANCELED;
