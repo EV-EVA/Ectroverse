@@ -792,8 +792,48 @@ int dbUserAdd( unsigned char *name, unsigned char *faction, unsigned char *forum
 
   descd.desc[0] = 0;
   dbUserDescSet( id, &descd );
+
+	//preserve user hashes so they are not logged out
+	int *user_hashes;
+	int num_users=0;
+	int *user_ptr;
+	dbUserPtr h_user;
+
+	for(h_user=dbUserList;h_user;h_user=h_user->next) {
+		num_users++;
+	}
+
+	user_hashes=(int*)malloc(num_users*5*sizeof(int));
+
+	user_ptr=user_hashes;
+	for(h_user=dbUserList;h_user;h_user=h_user->next) {
+		user_ptr[0]=h_user->id;
+		user_ptr[1]=h_user->session[0];
+		user_ptr[2]=h_user->session[1];
+		user_ptr[3]=h_user->session[2];
+		user_ptr[4]=h_user->session[3];
+		user_ptr+=5;
+	}
+
   dbEnd();
   dbInit();
+
+	//restore the hashes
+	user_ptr=user_hashes;
+	for(h_user=dbUserList;h_user;h_user=h_user->next) {
+		if(user_ptr[0]!=h_user->id) {
+			printf("WARNING: can't restore user hashes, id mismatch (user %d, stored %d)\n",h_user->id,user_ptr[0]);
+			continue;
+		}
+		h_user->session[0]=user_ptr[1];
+		h_user->session[1]=user_ptr[2];
+		h_user->session[2]=user_ptr[3];
+		h_user->session[3]=user_ptr[4];
+		user_ptr+=5;
+	}
+	free(user_hashes);
+
+
   printf("system kill -n 12 $(pidof sv)\n");
   system("kill -n 12 $(pidof sv)");
   return id;
@@ -2934,6 +2974,7 @@ int dbForumListThreads( int forum, int base, int end, dbForumForumPtr forumd, db
 
   *threads = threadsp;
   fclose( file );
+
 
   return d;
 }
