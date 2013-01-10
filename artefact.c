@@ -31,9 +31,9 @@ unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 "The <b>Network Backbone</b> gives +1% maximum research to every field, for every 5% of technology research you have!",
 "The <b>Super Stacker</b> increases the living space of a city by 10000!",
 "The <b>Foohon Ancestry</b> gives all races 1 Research Point per 10000 population!",
-"The <b>Romulan Military Outpost</b> halves your units upkeep, but reduces you energy production by 12%!",
+"The <b>Romulan Military Outpost</b> halves your units upkeep and reduces you energy production by 12%!",
 
- "The <b>Mineral Mine</b> increases mineral production by 20%, but decreases ectrolium and crystal production by 5%!",
+ "The <b>Mineral Mine</b> increases mineral production by 20% and decreases ectrolium production by 10%!",
 "The <b>Divine Stone</b> increases your culture research by 50% and decreases your technology research by 25%!",
 "The <b>Grand Silo</b> halves the decay of energy and crystal!",
 "The <b>Vulcan Fission Theory</b> lowers fission upkeep by 15% and increases output by 20%!", 

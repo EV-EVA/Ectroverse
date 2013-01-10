@@ -838,7 +838,7 @@ svDebugTickPass = 8;
 		}
 		//ARTI CODE Moral obelisk
 		//if(maind.artefacts & ARTEFACT_8_BIT)
-		//	maind.infos[7] *= 0.5;	
+		maind.infos[7] *= 0.5;	
 		maind.infos[8] = (1.0/35.0) * (float)maind.ressource[CMD_RESSOURCE_POPULATION]* ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_WELFARE] ) * (cmdRace[maind.raceid].growth);
     
     //ARTI CODE Lunar Tesseract
@@ -894,8 +894,7 @@ svDebugTickPass = 8;
 	if(maind.artefacts & ARTEFACT_16_BIT)
 	{
 		maind.infos[CMD_RESSOURCE_MINERAL] *= 1.20;
-		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 0.95;
-		maind.infos[CMD_RESSOURCE_CRYSTAL] *=0.95;
+		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 0.90;
 	}
 		
 svDebugTickPass = 9;
