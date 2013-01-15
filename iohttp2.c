@@ -7970,7 +7970,7 @@ iohttpForumSmileysDef iohttpForumSmileys[IOHTTP_FORUM_SMILETOTAL] =
 { 42, "::ninja" },
 { 43, "::puke" },
 { 44, "::kill" },
-{ 45, "::banana" },
+{ 53, "::banana" },
 { 46, "::smoke" },
 { 47, "::eyeroller" },
 { 48, "::wow" },
