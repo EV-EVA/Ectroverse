@@ -217,13 +217,13 @@ void iohttpFunc_races( svConnectionPtr cnt )
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-10% Energy production<br>+20% Research production <br>-20% Population upkeep reduction<br>+40% Attack strength<br>-10% Defence strength<br>+40% Travel speed<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Fighters units 20% stronger<br>Higher crystal production by 25%<br>Military Research production limit of 250%<br>-50% culture Research production </td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Network virus<br>Infiltration<br>Bio infection<br>Military sabotage<br>Nuke Planet<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Incandescence<br>Black Mist<br>War Illusions</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Portal Force Field<br>Vortex Portal<br>Energy production Surge</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Portal Force Field<br>Vortex Portal<br>Energy Surge</td>" );
  svSendString( cnt, "</tr></table><br><br>" );
 
  svSendString( cnt, "<h3>Manticarias</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>+40% Energy production<br>-10% Research production<br>-10% Population upkeep reduction<br>+40% Psychics strength<br>+20% Ghost Ships strength<br>-30% Attack strength<br>+10% Defence strength<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Higher solars collectors efficiency by 15%<br>+100% culture Research production </td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Energy production Transfer<br><br><i>Spells</i><br>Dark Web<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Energy Transfer<br><br><i>Spells</i><br>Dark Web<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Planetary Shielding<br>Mind Control</td>" );
  svSendString( cnt, "</tr></table><br><br>" );
 
@@ -237,36 +237,36 @@ void iohttpFunc_races( svConnectionPtr cnt )
  svSendString( cnt, "<h3>Spacebornes</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>+30% Energy production<br>+10% Research production<br>+20% Population upkeep reduction<br>-30% Psychics strength<br>+30% Agents strengths<br>+20% Defence strength<br>+80% Travel speed<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Soldiers and droids units 10% stronger<br>Energy production Research production limit of 250%<br>Halved technology Research production </td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Network Virus<br>Bio Infection<br>Energy production Transfer<br>Nuke Planet<br>Planetary Beacon<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Incandescence<br>Black Mist</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Network Virus<br>Bio Infection<br>Energy Transfer<br>Nuke Planet<br>Planetary Beacon<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Incandescence<br>Black Mist</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Survey System<br>Planetary Shielding<br></td>" );
  svSendString( cnt, "</tr></table><br><br>" );
 
  svSendString( cnt, "<h3>Dreamweavers</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-20% Energy production<br>+40% Research production<br>-10% Population upkeep reduction<br>+50% Psychics strength<br>+30% Ghost Ships strength<br>-30% Defence strength<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Doubled technology Research production <br>Higher crystal production by 25%<br>Construction Research production limit of 250%<br>Halved military Research production </td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Network Virus<br>Bio Infection<br>Energy production Transfer<br>Military Sabotage<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense artefact<br>Portal Force Field<br>Mind Control<br>Energy production Surge</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Network Virus<br>Bio Infection<br>Energy Transfer<br>Military Sabotage<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense Artefact<br>Portal Force Field<br>Mind Control<br>Energy Surge</td>" );
  svSendString( cnt, "</tr></table><br><br>" );
 	
 	svSendString( cnt, "<h3>Furtifons</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-10% Attack strength<br>-10% Research production<br>-10% Population upkeep reduction<br>+20% Agents strengths<br>+20% Ghost Ships strength<br>+60% Travel speed<br><br>" );
- svSendString( cnt, "<i>Special</i><br>Culture Research production provides a psychic shield for planets<br>Double Operations research<br>250% construction Research production max</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Energy production Transfer<br>Infiltration<br>High Infiltration<br>Planetary Beacon<br><br><i>Spells</i><br>Incandescence<br>War Illusions</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense artefact<br>Survey System<br>Planetary Shielding<br>Portal Force Field<br>Vortex Portal</td>" );
+ svSendString( cnt, "<i>Special</i><br>Culture Research production provides a psychic shield for planets<br>Double Operations research<br>2Construction Research production limit of 250%</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Energy Transfer<br>Infiltration<br>High Infiltration<br>Planetary Beacon<br><br><i>Spells</i><br>Incandescence<br>War Illusions</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense Artefact<br>Survey System<br>Planetary Shielding<br>Portal Force Field<br>Vortex Portal</td>" );
 	svSendString( cnt, "</tr></table><br><br>" );
 	
 	svSendString( cnt, "<h3>Samsonites</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>+30% Attack strength<br>+20% Defence strength<br>+10% Energy production<br>+10% Research production<br>-10% Agents strength<br>-10% Psychics strength<br>-20% Travel speed<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Ignore Dark Webs effects<br>185% Research production max</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Bio Infection<br>Military Sabotage<br>Nuke Planet<br><br><i>Spells</i><br>Black Mist<br>Phantoms</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Survey System<br>Mind Control<br>Energy production Surge</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Survey System<br>Mind Control<br>Energy Surge</td>" );
 	svSendString( cnt, "</tr></table><br><br>" );
 
 /* svSendString( cnt, "<h3>Ultimums</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>+70% stronger for all units<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Double Research production points production <br>All Research production maximum are 250%<br>Each 4000 population produces a Research production point<br>Higher solars collectors efficiency by 15%</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Network Virus<br>Infiltration<br>Bio Infection<br>Energy production Transfer<br>Military Sabotage<br><br>Nuke Planet<br>High Infiltration<br>Planetary Beacon<br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
- svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense artefact<br>Survey System<br>Planetary Shielding<br>Portal Force Field<br>Vortex Portal<br>Mind Control<br>Energy production Surge</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Network Virus<br>Infiltration<br>Bio Infection<br>Energy Transfer<br>Military Sabotage<br><br>Nuke Planet<br>High Infiltration<br>Planetary Beacon<br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense Artefact<br>Survey System<br>Planetary Shielding<br>Portal Force Field<br>Vortex Portal<br>Mind Control<br>Energy Surge</td>" );
  svSendString( cnt, "</tr></table><br><br>" );
 */
  svSendString( cnt, "<br><br><br>" );
