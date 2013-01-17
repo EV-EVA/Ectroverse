@@ -1,4 +1,3 @@
-
 int cmdTickProduction[CMD_BLDG_NUMUSED];
 
 
@@ -708,16 +707,14 @@ svDebugTickPass = 6;
       //research maximum
       fa = cmdRace[maind.raceid].researchmax[a];
       
-      //ARTI CODE Einstein's Manual
-      if(maind.artefacts & ARTEFACT_1_BIT)
-      	fa += (maind.research[CMD_RESEARCH_TECH]/5);	
-      
-      //ARTI CODE Einstein's Manual and delayed	
-    	//if((maind.artefacts & ARTEFACT_1_BIT)&&(maind.articount >= 144))
-    	//{
-    	//	fa -= (maind.research[CMD_RESEARCH_TECH]/5);	
-      	//fa += ((maind.research[CMD_RESEARCH_TECH]/5)*2); 	
-      //}
+          //ARTI CODE Network Backbone    
+    if(maind.artefacts & ARTEFACT_1_BIT)
+    {
+            fa += (maind.research[CMD_RESEARCH_TECH]/5);
+            // limit research to 250
+            if( fa >= 250)
+                    fa = 250;
+    }
       
     //ARTI CODE book of revelation
 		if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
