@@ -360,6 +360,61 @@ void iohttpFunc_delete( svConnectionPtr cnt )
     return;
   }
   
+        // SK: you can't delete when your empire is at war with someone or if you are declaring war on someone.
+      printf("---starting the check for deleting when in war.\n");
+     
+     int counterRelations, maxRelations, curfam;
+     dbMainEmpireDef empired;
+     unsigned char *empirestring;
+     int *rel;
+     int warCounter = 0;
+     
+     iohttpVarsInit( cnt );
+     empirestring = iohttpVarsFind( "id" );
+     iohttpVarsCut();
+     
+     printf("printing empirestring\n");
+     printf("%u\n",empirestring);
+     
+     if( !( empirestring ) || ( sscanf( empirestring, "%d", &curfam ) <= 0 ) )
+      curfam = maind.empire;
+     
+     if( dbMapRetrieveEmpire( curfam, &empired ) < 0 )
+     {
+      svSendString( cnt, "This empire does not seem to exist!</body></html>" );
+      return;
+     }
+     
+     if( ( maxRelations = dbEmpireRelsList( curfam, &rel ) ) >= 0 )
+     {
+               maxRelations <<= 2;
+      for( counterRelations = 0 ; counterRelations < maxRelations ; counterRelations += 4 )
+      {
+       if( rel[counterRelations+3] & 1 )
+        continue;
+       else if( rel[counterRelations+1] == CMD_RELATION_WAR )
+        warCounter++;
+      }
+      for( counterRelations = 0 ; counterRelations < maxRelations ; counterRelations += 4 )
+      {
+       if( !( rel[counterRelations+3] & 1 ) )
+        continue;
+       else if( rel[counterRelations+1] == CMD_RELATION_WAR )
+        warCounter++;
+      }
+     }
+     printf("printing warcounter\n");
+      printf("%d\n",warCounter);
+      if( warCounter > 0 )
+      {
+             svSendPrintf( cnt, "You cannot delete when your empire is at war.<br><br>");
+        iohttpBodyEnd( cnt );
+            return;
+      }
+     
+     printf("---ending the check for deleting when in war.\n");
+
+  
   //cant delete for 24hrs after round start
  // if(((svTickNum < 144)&&(svTickNum > 0))||(svTickNum))
  // {
