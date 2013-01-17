@@ -28,7 +28,7 @@ unsigned char *artefactName[ARTEFACT_NUMUSED] =
 
 unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 {
-"The <b>Network Backbone</b> gives +1% maximum research to every field, for every 5% of technology research you have!",
+"The <b>Network Backbone</b> increases by +1%, the research maximum of every field except technology, for every 10%% of technology research!",
 "The <b>Super Stacker</b> increases the population limit of a city by 10000!",
 "The <b>Foohon Ancestry</b> gives all races 1 Research Point per 10000 population!",
 "The <b>Romulan Military Outpost</b> halves your units upkeep and reduces you energy production by 12%!",
