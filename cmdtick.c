@@ -1058,7 +1058,7 @@ svDebugTickPass = 12;
     maind.networth += (long long int)(0.004 * maind.ressource[CMD_RESSOURCE_POPULATION]);
 
     for( a = 0 ; a < CMD_RESEARCH_NUMUSED ; a++ )
-      maind.networth += (0.002 * maind.research[a]);
+      maind.networth += (0.001 * maind.research[a]);
 
 // spec ops
     for( a = specopnum-1 ; a >= 0 ; a-- )
