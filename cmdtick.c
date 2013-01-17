@@ -707,14 +707,14 @@ svDebugTickPass = 6;
       //research maximum
       fa = cmdRace[maind.raceid].researchmax[a];
       
-          //ARTI CODE Network Backbone    
+    //ARTI CODE network backbone    
     if(maind.artefacts & ARTEFACT_1_BIT)
     {
-            fa += (maind.research[CMD_RESEARCH_TECH]/5);
-            // limit research to 250
-            if( fa >= 250)
-                    fa = 250;
+       // exclude tech research from having this bonus (otherwise there is no cap)
+       if( a != CMD_RESEARCH_TECH)
+            fa += (maind.research[CMD_RESEARCH_TECH]/10);
     }
+
       
     //ARTI CODE book of revelation
 		if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
