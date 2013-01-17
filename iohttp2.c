@@ -215,7 +215,7 @@ void iohttpFunc_races( svConnectionPtr cnt )
 
  svSendString( cnt, "<h3>Harks</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-10% Energy production<br>+20% Research production <br>-20% Population upkeep reduction<br>+40% Attack strength<br>-10% Defence strength<br>+40% Travel speed<br><br>" );
- svSendString( cnt, "<i>Special</i><br>Fighters units 20% stronger<br>Higher crystal production by 25%<br>Military Research production limit of 250%<br>-50% culture Research production </td>" );
+ svSendString( cnt, "<i>Special</i><br>Fighters units 20% stronger<br>Higher crystal production by 25%<br>Military Research production limit of 250%<br>Halved culture Research production </td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Network virus<br>Infiltration<br>Bio infection<br>Military sabotage<br>Nuke Planet<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Incandescence<br>Black Mist<br>War Illusions</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Portal Force Field<br>Vortex Portal<br>Energy Surge</td>" );
  svSendString( cnt, "</tr></table><br><br>" );
