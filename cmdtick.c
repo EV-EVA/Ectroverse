@@ -701,45 +701,86 @@ svDebugTickPass = 5;
     
 svDebugTickPass = 6;
 
-// calculate total research
-    for( a = 0 ; a < CMD_RESEARCH_NUMUSED ; a++ )
-    {
-      //research maximum
-      fa = cmdRace[maind.raceid].researchmax[a];
-      
-    //ARTI CODE network backbone    
-    if(maind.artefacts & ARTEFACT_1_BIT)
-    {
-       // exclude tech research from having this bonus (otherwise there is no cap)
-       if( a != CMD_RESEARCH_TECH)
-            fa += (maind.research[CMD_RESEARCH_TECH]/10);
-    }
-
-      
-    //ARTI CODE book of revelation
-		if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
-		  fa += 50;
-			
-	//	ARTI CODE book of revelation
-		if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_TECH))
-			fa -= 25;
-      
-    //ARTI CODE Cystal summoner
-		//if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
-		//	fa += 70;
-		//ARTI CODE Elit strategist
-		//if((maind.artefacts & ARTEFACT_128_BIT)&&(a == CMD_RESEARCH_MILITARY))
-		//	fa += 20;
-		//ARTI CODE Elit strategist
-		//if((maind.artefacts & ARTEFACT_ELIT_BIT)&&(a == CMD_RESEARCH_TECH))
-		//	fa -= 20;
-      b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
-      if( b > maind.totalresearch[a] )
-        maind.totalresearch[a]++;
-      else if( b < maind.totalresearch[a] )
-        maind.totalresearch[a]--;
-		}
-
+   // SK: because of the network backbone arti, we need to calculate Tech research first
+    int addedFromTech = 0;
+     
+    // calculate total research for tech
+     
+          //research maximum
+          fa = cmdRace[maind.raceid].researchmax[CMD_RESEARCH_TECH];
+               printf("max TECH research percentage: %c \n", fa);
+     
+            //      ARTI CODE book of revelation
+                    if(maind.artefacts & ARTEFACT_32_BIT)
+                            fa -= 25;
+     
+                    printf("modified TECH research percentage: %c \n", fa);
+     
+          b = fa * ( 1.0 - exp( (double)maind.research[CMD_RESEARCH_TECH] / ( -10.0 * (double)maind.networth ) ) );
+     
+              printf("total tech research percentage: %d \n", b);
+     
+          if( b > maind.totalresearch[CMD_RESEARCH_TECH] )
+            maind.totalresearch[CMD_RESEARCH_TECH]++;
+          else if( b < maind.totalresearch[CMD_RESEARCH_TECH] )
+            maind.totalresearch[CMD_RESEARCH_TECH]--;
+     
+              addedFromTech = b/10;
+              printf("added from tech: %c \n", addedFromTech);
+     
+     
+    // calculate total research
+        for( a = 0 ; a < CMD_RESEARCH_NUMUSED ; a++ )
+        {
+                    if(a == CMD_RESEARCH_TECH)
+                            continue;
+     
+          //research maximum
+          fa = cmdRace[maind.raceid].researchmax[a];
+     
+     
+              printf("reasearchtype: %c \n",a);
+              printf("researchmax by race: %c \n", fa);
+         
+         
+        //ARTI CODE book of revelation
+                    if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
+                      fa += 50;
+                           
+            ////    ARTI CODE book of revelation
+            //      if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_TECH))
+            //              fa -= 25;
+     
+        // put this arti last, you need the other ones calculated before this one.
+            //ARTI CODE network backbone    
+        if(maind.artefacts & ARTEFACT_1_BIT)
+        {
+           // exclude tech research from having this bonus (otherwise there is no cap)
+           if( a != CMD_RESEARCH_TECH)
+               {
+                fa += addedFromTech;
+                            printf("total with addition: %c \n", fa);
+               }
+        }
+     
+         
+        //ARTI CODE Cystal summoner
+                    //if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
+                    //      fa += 70;
+                    //ARTI CODE Elit strategist
+                    //if((maind.artefacts & ARTEFACT_128_BIT)&&(a == CMD_RESEARCH_MILITARY))
+                    //      fa += 20;
+                    //ARTI CODE Elit strategist
+                    //if((maind.artefacts & ARTEFACT_ELIT_BIT)&&(a == CMD_RESEARCH_TECH))
+                    //      fa -= 20;
+          b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
+     
+              printf("total research percentage: %d \n", b);
+          if( b > maind.totalresearch[a] )
+            maind.totalresearch[a]++;
+          else if( b < maind.totalresearch[a] )
+            maind.totalresearch[a]--;
+                    }
 
 svDebugTickPass = 7;
 
