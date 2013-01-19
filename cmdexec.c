@@ -602,6 +602,11 @@ int cmdExecAddBuild( int id, int type, int quantity, int plnid, int maxbuild )
         fa = cmdGetBuildOvercost( planetd.size, d+b );
         if( fa >= fb )
           break;
+        /*
+         * We are not checking the min over % specified
+         * (which is also not passed to the method here)
+         * See cmd.c cmdExecute method for possible check.
+         */
       }
 
       for( a = 0 ; a < CMD_RESSOURCE_NUMUSED ; a++ )
