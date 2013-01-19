@@ -117,8 +117,8 @@ float cmdBuildingUpkeep[CMD_BLDG_NUMUSED] =
 0.0, 20.0, 2.0, 2.0, 2.0, 4.0, 1.0, 4.0, 16.0
 };
 
-int cmdBuildingFlags[CMD_BLDG_NUMUSED] =
 {
+int cmdBuildingFlags[CMD_BLDG_NUMUSED] =
 0, 0, 0, 0, 0, 0, 0, 1, 1
 };
 
@@ -745,10 +745,16 @@ void cmdGetBuildCosts( dbUserMainPtr maind, int type, long long int *buffer )
   return;
 }
 
+/*
+ * We must check for special case (total <= size) and not just (total < size)
+ * because floating point errors may cause cost to be smaller than 1,
+ * when it should be equal to 1.
+ * In particular, when size is cast bigger than total.
+ */
 float cmdGetBuildOvercost( int size, int total )
 {
   float cost;
-  if( total < size )
+  if( total <= size )
     return 1.0;
   cost = (float)total / (float)size;
   return ( cost * cost );
@@ -1386,15 +1392,15 @@ int cmdExecute( svConnectionPtr cnt, int *cmd, void *buffer, int size )
       fb = ( (float)cmd[5] / 100.0 ) + 1.0;
       if( fb < 1.001 )
         fb = 1.001;
-      fc = ( (float)cmd[6] / 100.0 + 1);
+      fc = ( (float)cmd[6] / 100.0 ) + 1.0;
       
       memset( costbuild, 0, CMD_RESSOURCE_NUMUSED*sizeof(float) );
       for( b = c = 0 ; b < cmd[3] ; b++ )
       {
-        fa = cmdGetBuildOvercost( planetd.size, d+b );
-        if( fa >= fb )
+        fa = cmdGetBuildOvercost( planetd.size, d+b ); // Current overbuild
+        if( fa >= fb ) // If max overbuild less than current overbuild
           break;
-        if(fa < fc)
+        if(fa < fc) // if current overbuild less than min overbuild
         	break;
         for( a = 0 ; a < CMD_RESSOURCE_NUMUSED ; a++ )
         {
