@@ -362,7 +362,7 @@ svDebugTickPass = 1 + 10000;
     
 		planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * CMD_POPULATION_CITIES ) );
 		
-		//ARTI CODE Larger appartement
+		//ARTI CODE Super Stacker
 		if(mainp->artefacts & ARTEFACT_2_BIT)
 			planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+1000) ) );
 		
@@ -710,7 +710,7 @@ svDebugTickPass = 6;
           fa = cmdRace[maind.raceid].researchmax[CMD_RESEARCH_TECH];
                printf("max TECH research percentage: %c \n", fa);
      
-            //      ARTI CODE book of revelation
+            //      ARTI CODE Divine Stone
                     if(maind.artefacts & ARTEFACT_32_BIT)
                             fa -= 25;
      
@@ -743,7 +743,7 @@ svDebugTickPass = 6;
               printf("researchmax by race: %c \n", fa);
          
          
-        //ARTI CODE book of revelation
+        //ARTI CODE Divine Stone
                     if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
                       fa += 50;
                            
@@ -805,13 +805,13 @@ svDebugTickPass = 7;
 	//if((maind.artefacts & ARTEFACT_ETHER_BIT)&&(maind.articount >= 144))
 	//	fa *= 1.10;	
 		
-	//ARTI CODE Moral obelisk
+	//ARTI CODE Romulan Military outpost
 	if(maind.artefacts & ARTEFACT_8_BIT)
 		fa *= 0.88;	
 			
 	fb = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ENERGY] * ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_ENERGY] );
 
-	//ARTI CODE Uranium Mine
+	//ARTI CODE Vulcan Fission Theory
 	if(maind.artefacts & ARTEFACT_128_BIT)
 		fb *= 1.2;
 	if((maind.artefacts & ARTEFACT_128_BIT)&&(maind.articount >= 144))
@@ -831,7 +831,7 @@ svDebugTickPass = 7;
     
   fa = CMD_ENERGY_DECAY;
   
-  //ARTI CODE Granary
+  //ARTI CODE Grand Silo
 	if(maind.artefacts & ARTEFACT_64_BIT)
 	fa /= 2;	
 	//ARTI CODE Granary + delayed
@@ -846,7 +846,7 @@ svDebugTickPass = 7;
   {
   	if( ( a == CMD_BUILDING_SOLAR ) || ( a == CMD_BUILDING_FISSION ) )
   	{
-  		//ARTI CODE Uranium Mine
+  		//ARTI CODE Vulcan Fission Theory
   		if((maind.artefacts & ARTEFACT_128_BIT)&&(maind.articount >= 144)&&( a == CMD_BUILDING_FISSION ))
   			maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb *0.7;
 			else if((maind.artefacts & ARTEFACT_128_BIT)&&( a == CMD_BUILDING_FISSION ))
@@ -874,7 +874,7 @@ svDebugTickPass = 8;
 		{
 			maind.infos[7] += ((float)maind.totalunit[a])*cmdUnitUpkeep[a];
 		}
-		//ARTI CODE Moral obelisk
+		//ARTI CODE Romulan Military Outpost
 		//if(maind.artefacts & ARTEFACT_8_BIT)
 		maind.infos[7] *= 0.5;	
 		maind.infos[8] = (1.0/35.0) * (float)maind.ressource[CMD_RESSOURCE_POPULATION]* ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_WELFARE] ) * (cmdRace[maind.raceid].growth);
