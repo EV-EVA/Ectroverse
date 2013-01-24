@@ -7,7 +7,7 @@ int artefactPrecense( dbMainPlanetPtr planetd )
 
 
 /*
-Round 56 was about time to upgrade ty goemb
+Ectroverse Artefacts round #1 - ...
 */
 
 unsigned char *artefactName[ARTEFACT_NUMUSED] =
