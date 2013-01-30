@@ -17,7 +17,6 @@ password
 To change this, look for lines 2233 and 2238 in cmd.c file.
 
 KNOWN BUGS - Very annoying and need to go:
-* Overbuilding bug: sometimes a planet in the list is skipped.
 * Merge Fleet does not work. Splitting does.
 * ... ?
 
