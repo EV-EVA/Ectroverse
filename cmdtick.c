@@ -372,9 +372,6 @@ svDebugTickPass = 2 + 10000;
 		//Planet grow pop is 2% each tick
 		planetd.population += ceil(planetd.maxpopulation * 0.02 * pow(0.75, (float)nInfection));
 	
-		//ARTI CODE Cloning Facilities
-		//if(mainp->artefacts & ARTEFACT_CLON_BIT)
-		//	planetd.population += ceil((planetd.maxpopulation * 0.02 * pow(0.75, (float)nInfection)) * 0.5);
 
     if( planetd.population > planetd.maxpopulation )
       planetd.population = planetd.maxpopulation;
@@ -539,38 +536,13 @@ svDebugTickId = a;
 
 svDebugTickPass = 1;
 
-	//ARTI CODE Ticking Time Bomb
-	/*if(!(svTickNum % 52))	//New year
-	{
-		//Nuke ARTI Planet
-		fleetd.unit[CMD_UNIT_AGENT] = 1;
-		fleetd.destid = 2134;
-		
-		printf("clear\n");
-		specopAgentsPerformOp(0,0,&fleetd,NULL);
-		
-	}*/
 	
   if( ( dbMapRetrieveMain( dbMapBInfoStatic ) < 0 ) )
     printf( "Tick error #1\n" );   
     
   for( user = dbUserList ; user ; user = user->next )
   {
-  	
-  	/* this is for all galaxy arti
-  	//ARTI CODE
-  	if(nArti & ARTEFACT_WILL_BIT)
-  	{
-  		//do things like open all fleet and remove 0.5% chicks in all fleetd
-  		nNum = dbUserFleetList(user->id, &fleetp);
-  		for(i=0;i<nNum;i++)
-  		{
-  			fleetp[i].unit[CMD_UNIT_WIZARD] *= 100;
-  			fleetp[i].unit[CMD_UNIT_WIZARD] /= 100.5;
-  			dbUserFleetSet(user->id, i, &fleetp[i]);
-  		}
-  	}*/
-			
+  		
 				
     if( !( user->flags & CMD_USER_FLAGS_ACTIVATED ) )
       continue;
@@ -747,9 +719,6 @@ svDebugTickPass = 6;
                     if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
                       fa += 50;
                            
-            ////    ARTI CODE book of revelation
-            //      if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_TECH))
-            //              fa -= 25;
      
         // put this arti last, you need the other ones calculated before this one.
             //ARTI CODE network backbone    
@@ -762,17 +731,7 @@ svDebugTickPass = 6;
                             printf("total with addition: %c \n", fa);
                }
         }
-     
-         
-        //ARTI CODE Cystal summoner
-                    //if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
-                    //      fa += 70;
-                    //ARTI CODE Elit strategist
-                    //if((maind.artefacts & ARTEFACT_128_BIT)&&(a == CMD_RESEARCH_MILITARY))
-                    //      fa += 20;
-                    //ARTI CODE Elit strategist
-                    //if((maind.artefacts & ARTEFACT_ELIT_BIT)&&(a == CMD_RESEARCH_TECH))
-                    //      fa -= 20;
+
           b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
      
               printf("total research percentage: %d \n", b);
@@ -794,17 +753,11 @@ svDebugTickPass = 7;
    	 	
 	fa += fb;
 	
-	//ARTI CODE Ticking Time Bomb
-	//if(maind.artefacts & ARTEFACT_2_BIT)
-	//	fa *= 1.10;	
 	//ARTI CODE Ether Garden
 	
 	if(maind.artefacts & ARTEFACT_ETHER_BIT)
 		fa *= 1.10;	
-	//ARTI CODE Ether Garden + Delayed Artefact
-	//if((maind.artefacts & ARTEFACT_ETHER_BIT)&&(maind.articount >= 144))
-	//	fa *= 1.10;	
-		
+
 	//ARTI CODE Romulan Military outpost
 	if(maind.artefacts & ARTEFACT_8_BIT)
 		fa *= 0.88;	
@@ -813,8 +766,6 @@ svDebugTickPass = 7;
 
 	//ARTI CODE Vulcan Fission Theory
 	if(maind.artefacts & ARTEFACT_128_BIT)
-		fb *= 1.2;
-	if((maind.artefacts & ARTEFACT_128_BIT)&&(maind.articount >= 144))
 		fb *= 1.2;
 		
   maind.infos[4] = (long long int)( fa * fb );
@@ -834,9 +785,6 @@ svDebugTickPass = 7;
   //ARTI CODE Grand Silo
 	if(maind.artefacts & ARTEFACT_64_BIT)
 	fa /= 2;	
-	//ARTI CODE Granary + delayed
-	//if((maind.artefacts & ARTEFACT_64_BIT)&&(maind.articount >= 144))
-	//fa /= 2;
 		
   maind.infos[5] = fa * (double)maind.ressource[CMD_RESSOURCE_ENERGY];
 
@@ -847,9 +795,7 @@ svDebugTickPass = 7;
   	if( ( a == CMD_BUILDING_SOLAR ) || ( a == CMD_BUILDING_FISSION ) )
   	{
   		//ARTI CODE Vulcan Fission Theory
-  		if((maind.artefacts & ARTEFACT_128_BIT)&&(maind.articount >= 144)&&( a == CMD_BUILDING_FISSION ))
-  			maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb *0.7;
-			else if((maind.artefacts & ARTEFACT_128_BIT)&&( a == CMD_BUILDING_FISSION ))
+		 if((maind.artefacts & ARTEFACT_128_BIT)&&( a == CMD_BUILDING_FISSION ))
 				maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb * 0.85;
 			else
       	maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb;
@@ -875,13 +821,9 @@ svDebugTickPass = 8;
 			maind.infos[7] += ((float)maind.totalunit[a])*cmdUnitUpkeep[a];
 		}
 		//ARTI CODE Romulan Military Outpost
-		//if(maind.artefacts & ARTEFACT_8_BIT)
+		if(maind.artefacts & ARTEFACT_8_BIT)
 		maind.infos[7] *= 0.5;	
 		maind.infos[8] = (1.0/35.0) * (float)maind.ressource[CMD_RESSOURCE_POPULATION]* ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_WELFARE] ) * (cmdRace[maind.raceid].growth);
-    
-    //ARTI CODE Lunar Tesseract
-		//if(maind.artefacts & ARTEFACT_LUN_BIT)
-		//	maind.infos[8] += 0.3 * ((1.0/35.0) * (float)maind.ressource[CMD_RESSOURCE_POPULATION]* ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_WELFARE] ) * (cmdRace[maind.raceid].growth));
     
     
     if( maind.infos[8] >= maind.infos[6] )
@@ -913,20 +855,11 @@ svDebugTickPass = 8;
     maind.infos[CMD_RESSOURCE_ENERGY] = maind.infos[4] - maind.infos[5] - maind.infos[6] - maind.infos[7] + maind.infos[8] - maind.infos[11];
 
     maind.infos[CMD_RESSOURCE_MINERAL] = cmdRace[maind.raceid].resource[CMD_RESSOURCE_MINERAL] * (float)(cmdTickProduction[CMD_BUILDING_MINING]);
-    //ARTI CODE Ticking Time Bomb
-	//if(maind.artefacts & ARTEFACT_2_BIT)
-	//	maind.infos[CMD_RESSOURCE_MINERAL] *= 1.10;
 
-	//ARTI CODE Ticking Time Bomb
-	//if(maind.artefacts & ARTEFACT_2_BIT)
-	//	maind.infos[9] *= 1.10;
 	maind.infos[CMD_RESSOURCE_CRYSTAL] = (maind.infos[9] - maind.infos[10]);
 	
 	
 	maind.infos[CMD_RESSOURCE_ECTROLIUM] = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ECTROLIUM] * (float)(cmdTickProduction[CMD_BUILDING_REFINEMENT]);
-	//ARTI CODE Ticking Time Bomb
-	//if(maind.artefacts & ARTEFACT_2_BIT)
-	//	maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 1.10;
 		
 	//ARTI CODE Mineral mine
 	if(maind.artefacts & ARTEFACT_16_BIT)
