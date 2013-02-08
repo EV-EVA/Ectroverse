@@ -90,7 +90,7 @@ unsigned char *cmdResearchDesc[CMD_RESEARCH_NUMUSED] =
 "Allow construction of advanced units and buildings",
 "Increases energy output",
 "Increases the protection range of your portals",
-"Increases population and psychics capabilities",
+"Increases building upkeep reduction and psychics capabilities",
 "Increases the effectiveness of your agents"
 };
 
@@ -346,7 +346,7 @@ cmdRaceDef cmdRace[CMD_RACE_NUMUSED] =
   {   1.5,   1.5,   1.5,   1.5,   1.5,   1.5,   1.5 },
   { 200.0, 200.0, 200.0, 200.0, 200.0, 200.0, 200.0 },
   { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,   1.0, 1.0, 1.1, 1.0 },
-  { 0.90, 1.00, 1.00, 1.20 },
+  { 0.80, 1.00, 1.00, 1.20 },
   CMD_RACE_SPECIAL_POPRESEARCH,
   1 | 2 | 0 | 8 |  0 |  0 | 64 |  0 | 256 | 512,
   1 | 2 | 4 | 0 |  0 | 32 |  0,
