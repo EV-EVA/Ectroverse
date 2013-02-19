@@ -228,7 +228,7 @@ void iohttpFunc_races( svConnectionPtr cnt )
  svSendString( cnt, "</tr></table><br><br>" );
 
  svSendString( cnt, "<h3>Foohons</h3><table width=\"620\" border=\"0\"><tr>" );
- svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-10% Energy production<br>+50% Research production<br>+10% Population upkeep reduction<br>+10% Ghost Ships strength<br>+20% Attack strength<br>+10% Defence strength<br><br>" );
+ svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-20% Energy production<br>+50% Research production<br>+10% Population upkeep reduction<br>+10% Ghost Ships strength<br>+20% Attack strength<br>+10% Defence strength<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Each 4000 population produces 1 research point each week<br>Ectrolium production increased by 20%</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Infiltration<br>Military Sabotage<br>High Infiltration<br>Planetary Beacon<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Psychic Assault</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense Artefact<br>Survey System<br>Vortex Portal<br>Mind Control</td>" );
