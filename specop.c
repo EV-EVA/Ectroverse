@@ -1,4 +1,3 @@
-
 int specopAgentsAllowed( int specop, int raceid )
 {
   if( !( cmdRace[raceid].operations & ( 1 << specop ) ) )
@@ -1476,12 +1475,13 @@ Kill 1 Fission takes 400 energy
       {
         if( en[a] < 0.0001 )
           continue;
-        fa = ( ent * endiv[a] ) / en[a];
-        b = main2d.ressource[1+a] * fa;
-        if( b > main2d.ressource[1+a] )
-          b = main2d.ressource[1+a];
-        newd[11+a] = b;
-        main2d.ressource[1+a] -= b;
+	fa = ( main2d.ressource[1+a] * ( ent * endiv[a] ) ) /
+	en[a];
+	if( fa > (float)main2d.ressource[1+a] )
+	fa = (float)main2d.ressource[1+a];
+	b = (int)fa;
+	newd[11+a] = b;
+	main2d.ressource[1+a] -= b;
       }
 
       if( ( b = dbUserPlanetListIndices( planetd.owner, &plnlist ) ) > 0 )
