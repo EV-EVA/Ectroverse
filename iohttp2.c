@@ -1237,7 +1237,7 @@ void iohttpNewsString( svConnectionPtr cnt, long long int *newsd )
     if( newsd[7] <= 0 )
      svSendPrintf( cnt, "<i>Your ghost ships successfully stayed undiscovered during the incantation.</i><br>" );
     else
-     svSendPrintf( cnt, "<i>%lld of your ghost ships were oblitered by defending forces.</i><br>", newsd[7] );
+     svSendPrintf( cnt, "<i>%lld of your ghost ships were obliterated by defending forces.</i><br>", newsd[7] );
     if( newsd[8] > 0 )
      svSendPrintf( cnt, "<i>%lld defending psychics were killed.</i><br>", newsd[8] );
     if( newsd[9] > 0 )
@@ -1729,7 +1729,7 @@ void iohttpFamNews( svConnectionPtr cnt, int num, long long int *newsd, dbMainEm
      if( newsd[7] <= 0 )
       svSendPrintf( cnt, "<i>The ghost ships successfully stayed undiscovered during the incantation.</i><br>" );
      else
-      svSendPrintf( cnt, "<i>%lld ghost ships were oblitered by defending forces.</i><br>", newsd[7] );
+      svSendPrintf( cnt, "<i>%lld ghost ships were obliterated by defending forces.</i><br>", newsd[7] );
      if( newsd[8] > 0 )
       svSendPrintf( cnt, "<i>%lld defending psychics were killed.</i><br>", newsd[8] );
      if( newsd[9] > 0 )
@@ -6182,9 +6182,6 @@ void iohttpFunc_spec( svConnectionPtr cnt )
  svSendPrintf( cnt, "<b>Operations</b><br>" );
  for( a = 0 ; a < CMD_AGENTOP_NUMUSED ; a++ )
  {
- 	//ARTI CODE Nuker
- 	//if(!((maind.artefacts & ARTEFACT_NUK_BIT)&&(a == CMD_OPER_NUKEPLANET )))
- 	//{
 	  if( !( specopAgentsAllowed( a, maind.raceid ) ) )
 	  	continue;
 	//}
