@@ -961,11 +961,11 @@ void specopPsychicsPerformOp( int id, int targetid, int specop, int psychics, lo
     newd[2] = CMD_NEWS_SPWARILLUSIONS;
     fa = 100.0 * (float)attack / (float)maind.networth;
     a = (int)( fa * 4.5 );
-    if( a >= 0 )
-    {
-			a += a * rand()%20;
-    	k = 0;
-    	j = dbUserSpecOpList(id, &specop2d);
+    a += a * rand()%20;
+    if (a<0)
+    	a = 0;
+    k = 0;
+    j = dbUserSpecOpList(id, &specop2d);
     	for(i=0;i<j;i++)
     	{
     		if (specop2d[i].type == (CMD_SPELL_WARILLUSIONS | 0x1000))
