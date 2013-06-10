@@ -1515,7 +1515,7 @@ Kill 1 Fission takes 400 energy
       if( en[5] > 0.0001 )
       {
         newd[16] = 0;
-        fa = ( ent * endiv[0] ) / en[5];
+        fa = ( ent * endiv[5] ) / en[5];
         for( a = 0 ; a < CMD_RESEARCH_NUMUSED ; a++ )
         {
           b = main2d.research[a] * fa;
