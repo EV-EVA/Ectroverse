@@ -1486,10 +1486,12 @@ Kill 1 Fission takes 400 energy
       if( ( b = dbUserPlanetListIndices( planetd.owner, &plnlist ) ) > 0 )
       {
         fa = fb = 0.0;
-        if( en[3] > 0.0001 )
-          fa = ( ent * endiv[3] ) / en[3];
-        if( en[4] > 0.0001 )
-          fb = ( ent * endiv[4] ) / en[4];
+        if( en[3] < 0.0001 )
+          continue;
+        fa = ( ent * endiv[3] ) / en[3];
+        if( en[4] < 0.0001 )
+          continue;
+        fb = ( ent * endiv[4] ) / en[4];
         newd[14] = newd[15] = 0;
         for( a = 0 ; a < b ; a++ )
         {
