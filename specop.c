@@ -1273,7 +1273,7 @@ void specopGhostsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
       dx = ( ( dbArtefactPos[a] >> 8 ) & 0xFFF ) - x;
       dy = ( dbArtefactPos[a] >> 20 ) - y;
       fb = sqrt( (double)( 1 + dx*dx + dy*dy ) );
-      if( fb >= fa )
+      if( fb > fa )
         continue;
       newd[11] = 0x10000 | (int)( fa / fb );
       if( fa >= 4 )
