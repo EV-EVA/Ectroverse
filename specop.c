@@ -1,3 +1,4 @@
+
 int specopAgentsAllowed( int specop, int raceid )
 {
   if( !( cmdRace[raceid].operations & ( 1 << specop ) ) )
@@ -962,8 +963,9 @@ void specopPsychicsPerformOp( int id, int targetid, int specop, int psychics, lo
     fa = 100.0 * (float)attack / (float)maind.networth;
     a = (int)( fa * 4.5 );
     a += a * rand()%20;
+{
     if (a<0)
-    	a = 0;
+    a = 0;
     k = 0;
     j = dbUserSpecOpList(id, &specop2d);
     	for(i=0;i<j;i++)
@@ -1273,7 +1275,7 @@ void specopGhostsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
       dx = ( ( dbArtefactPos[a] >> 8 ) & 0xFFF ) - x;
       dy = ( dbArtefactPos[a] >> 20 ) - y;
       fb = sqrt( (double)( dx*dx + dy*dy ) );
-      if( fb > fa )
+      if( fb > fa )     
         continue;
       newd[11] = 0x10000 | (int)( fa / fb );
       if( fa >= 4 )
@@ -1432,7 +1434,7 @@ void specopGhostsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 //      newd[11] = main2d.ressource[CMD_RESSOURCE_ENERGY];
 
 
-        ent = 320.0*(double)attack + (double)main2d.ressource[CMD_RESSOURCE_ENERGY];
+        ent = 320.0*(float)attack + (float)main2d.ressource[CMD_RESSOURCE_ENERGY];
 
 
 
@@ -1472,26 +1474,25 @@ Kill 1 Fission takes 400 energy
       endiv[5] = en[5] / fa;
 
       for( a = 0 ; a < 3 ; a++ )
-      {
-        if( en[a] < 0.0001 )
-          continue;
-	fa = ( main2d.ressource[1+a] * ( ent * endiv[a] ) ) / en[a];
-	if( fa > (float)main2d.ressource[1+a] )
-		fa = (float)main2d.ressource[1+a];
-	b = (int)fa;
-	newd[11+a] = b;
-	main2d.ressource[1+a] -= b;
-      }
+
+     {
+             if( en[a] < 0.0001 )
+                       continue;
+                       fa = ( main2d.ressource[1+a] * ( ent * endiv[a] ) ) / en[a];
+                       if( fa > (float)main2d.ressource[1+a] )
+                       fa = (float)main2d.ressource[1+a];
+                       b = (int)fa;
+                       newd[11+a] = b;
+                       main2d.ressource[1+a] -= b;
+                             }
 
       if( ( b = dbUserPlanetListIndices( planetd.owner, &plnlist ) ) > 0 )
       {
         fa = fb = 0.0;
-        if( en[3] < 0.0001 )
-          continue;
-        fa = ( ent * endiv[3] ) / en[3];
-        if( en[4] < 0.0001 )
-          continue;
-        fb = ( ent * endiv[4] ) / en[4];
+        if( en[3] > 0.0001 )
+          fa = ( ent * endiv[3] ) / en[3];
+        if( en[4] > 0.0001 )
+          fb = ( ent * endiv[4] ) / en[4];
         newd[14] = newd[15] = 0;
         for( a = 0 ; a < b ; a++ )
         {
@@ -1514,10 +1515,10 @@ Kill 1 Fission takes 400 energy
       if( plnlist )
         free( plnlist );
 
-      if( en[5] < 0.0001 )
-        continue;
-      newd[16] = 0;
-        fa = ( ent * endiv[0] ) / en[5];
+      if( en[5] > 0.0001 )
+      {
+        newd[16] = 0;
+        fa = ( ent * endiv[5] ) / en[5];
         for( a = 0 ; a < CMD_RESEARCH_NUMUSED ; a++ )
         {
           b = main2d.research[a] * fa;
@@ -1526,7 +1527,8 @@ Kill 1 Fission takes 400 energy
           main2d.research[a] -= b;
           newd[16] += b;
         }
-        
+      }
+
       newd[17] = main2d.ressource[CMD_RESSOURCE_ENERGY];
       main2d.ressource[CMD_RESSOURCE_ENERGY] = 0;
       dbUserMainSet( planetd.owner, &main2d );
