@@ -1557,7 +1557,7 @@ void iohttpFunc_admin( svConnectionPtr cnt )
 
   if( action[2] )
   {
-    printf( "Admin: Shutding down!\n" );
+    printf( "Admin: Shutting down!\n" );
     cmdExecuteFlush();
     dbFlush();
 

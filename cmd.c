@@ -277,7 +277,7 @@ float cmdPsychicopReadiness[CMD_PSYCHICOP_NUMUSED] =
 
 int cmdGhostopReadiness[CMD_GHOSTOP_NUMUSED] =
 {
-60, 20, 40, 30, 60, 40, 80
+50, 20, 40, 30, 55, 40, 70
 };
 
 
@@ -311,7 +311,7 @@ int cmdPsychicopFlags[CMD_PSYCHICOP_NUMUSED] =
 // 1:stealth  2:can be self-spell  4:target system  8:not offensive
 int cmdGhostopFlags[CMD_GHOSTOP_NUMUSED] =
 {
-4, 1|4, 2|8, 0, 4, 1, 2
+4, 1|4, 1|2|8, 0, 4, 1, 2
 };
 
 
