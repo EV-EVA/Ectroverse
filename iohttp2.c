@@ -4281,12 +4281,7 @@ void iohttpFunc_planet( svConnectionPtr cnt )
  {
   if( planetd.flags & CMD_PLANET_FLAGS_HOME )
    svSendPrintf( cnt, "No one owns this planet, but it is part of a home system and unavailable for exploration" );
-  else
-	  if(planetHasABadBonus(plnid) == 0) {
-		  svSendPrintf( cnt, "No one owns this planet, it is free to explore.<br><br><a href=\"explore?id=%d\">Explore this planet</a><br><br><a href=\"spec?id=%d\">Special operation</a>", plnid, plnid );
-	  } else {
-		  svSendPrintf( cnt, "This planet cannot sustain life.");
-	  }
+svSendPrintf( cnt, "No one owns this planet, it is free to explore.<br><br><a href=\"explore?id=%d\">Explore this planet</a><br><br><a href=\"spec?id=%d\">Special operation</a>", plnid, plnid );
  }
  else if( planetd.owner == id )
  {
@@ -5956,7 +5951,7 @@ void iohttpFunc_explore( svConnectionPtr cnt )
   return;
  }
 
- if( explorestring && (planetHasABadBonus(plnid) == 0) )
+ if( explorestring  )
  {
   if( ( cmdExecExplore( id, plnid, &explore ) ) < 0 )
   {
@@ -8892,15 +8887,3 @@ void iohttpForum( svConnectionPtr cnt )
  svSendString( cnt, "</center></body></html>" );
  return;
 }
-
-int planetHasABadBonus(int plnid)
-{
-	int badPlanetIds[360] = {};
-	int i;
-    for(i = 0; i < 360; i++) {
-	   if(badPlanetIds[i] == plnid) {
-		   return 1;
-	   }
-    }
-    return 0;
-} 
