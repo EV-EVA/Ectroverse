@@ -712,7 +712,7 @@ svDebugTickPass = 6;
 			
      
         // put this arti last, you need the other ones calculated before this one.
-            //ARTI CODE network backbone    
+        /*    //ARTI CODE network backbone but this block back on to put it back in    
         if(maind.artefacts & ARTEFACT_1_BIT)
         {
            // exclude tech research from having this bonus (otherwise there is no cap)
@@ -720,7 +720,7 @@ svDebugTickPass = 6;
                {
                 fa += addedFromTech;
                }
-        }
+        } */
 
           b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
           if( b > maind.totalresearch[a] )
