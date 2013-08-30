@@ -1034,7 +1034,8 @@ svDebugTickPass = 12;
       	if(specopd[a].type == CMD_OPER_PLANETBEACON)
       	{
       		dbMapRetrievePlanet(specopd[a].plnid, &planetd);
-    			planetd.flags ^= CMD_PLANET_FLAGS_BEACON;
+          // changed by goemb to fix permanent PB on planets when they change from owner during the operation
+    			planetd.flags &= (~CMD_PLANET_FLAGS_BEACON);
     			dbMapSetPlanet(specopd[a].plnid, &planetd);
       	}
       	
