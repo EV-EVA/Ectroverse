@@ -121,7 +121,7 @@ unsigned char *ioCompareFindWords( unsigned char *string, unsigned char *word )
     {
       if( !( word[i] ) )
         return &string[i];
-      if( string[i] != word[i] )
+      if( string[i] != word[i] && word[i] != '*' )
         break;
     }
   }

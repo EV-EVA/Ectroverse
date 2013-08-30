@@ -28,25 +28,25 @@
 #define SERVER_TIME_ZONE 1
 
 #define SV_TICK_TIME (600)
-#define START_TIME " Dec 31 02:06"
-#define STOP_TIME "Dec 31 02:1"
+#define START_TIME " Apr 16 20:00"
+#define STOP_TIME "May 14 16:00"
 
 
-#define ROUND_ID (0)
-#define DELAY_TIME (89)
+#define ROUND_ID (7)
+#define DELAY_TIME (00)
 
-#define SV_TICK_FILE "/home/ev3/data/ticks"
+#define SV_TICK_FILE "/var/www/ectroverse.org/data/ticks"
 
-#define DB_DIRECTORY "/home/ev3/data"
+#define DB_DIRECTORY "/var/www/ectroverse.org/data"
 
-#define PUBLIC_FORUM_DIRECTORY "/home/ev3/data"
+#define PUBLIC_FORUM_DIRECTORY "/var/www/ectroverse.org/data"
 
-#define USER_DIRECTORY "/home/ev3/data"
+#define USER_DIRECTORY "/var/www/ectroverse.org/data"
 
-#define IOHTTP_FILES_DIRECTORY "/home/ev3/images"
+#define IOHTTP_FILES_DIRECTORY "/var/www/ectroverse.org/images"
 
-#define IOHTTP_READ_DIRECTORY "/home/ev3/read"
+#define IOHTTP_READ_DIRECTORY "/var/www/ectroverse.org/read"
 
-#define LOGS_DIRECTORY "/home/ev3/logs"
+#define LOGS_DIRECTORY "/var/www/ectroverse.org/logs"
 
 

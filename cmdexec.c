@@ -602,11 +602,6 @@ int cmdExecAddBuild( int id, int type, int quantity, int plnid, int maxbuild )
         fa = cmdGetBuildOvercost( planetd.size, d+b );
         if( fa >= fb )
           break;
-        /*
-         * We are not checking the min over % specified
-         * (which is also not passed to the method here)
-         * See cmd.c cmdExecute method for possible check.
-         */
       }
 
       for( a = 0 ; a < CMD_RESSOURCE_NUMUSED ; a++ )
@@ -1305,7 +1300,7 @@ int cmdExecAddRelation( int fam, int type, int famtarget )
   	
     if( a >= 1 )
     {
-      cmdErrorString = "You can't send more than 1 alliance offer :D";
+      cmdErrorString = "You can't send more than 1 alliance offer!";
       return -3;
     }
     rel[0] = svTickNum;
@@ -1419,14 +1414,13 @@ int cmdExecSendFleetInfos( int id, int plnid, int *fr )
   else if( b == -3 )
     return -3;
 
-  fa = cmdRace[maind.raceid].speed;
-  //ARTI CODE Speed demon
-	//if(maind.artefacts & ARTEFACT_16_BIT)
-	//	fa *= 1.5;
-	//ARTI CODE Demon worker
-	//if(maind.artefacts & ARTEFACT_32_BIT)
-	//	fa *= 0.7;
+ // CODE for artefact that increases travel speed by n%
   
+   if ( maind.artefacts & ARTEFACT_128_BIT)
+   fa = cmdRace[maind.raceid].speed * 1.3;
+   else
+   fa = cmdRace[maind.raceid].speed;
+ 
   ret = (int)( (float)a / fa ) >> 8;
   if( !( fr ) )
     return ret;
@@ -1486,13 +1480,15 @@ int cmdExecSendFleet( int id, int x, int y, int z, int order, int *sendunit )
   else if( b == -3 )
     return -3;
 
-  fa = cmdRace[maind.raceid].speed;
-  //ARTI CODE Speed Demon
-	//if(maind.artefacts & ARTEFACT_16_BIT)
-	//	fa *= 1.5;
-	//ARTI CODE Demon worker
-	//if(maind.artefacts & ARTEFACT_32_BIT)
-	//	fa *= 0.7;
+  
+  // CODE_speed_arti
+  
+    if ( maind.artefacts & ARTEFACT_128_BIT)
+    fa = cmdRace[maind.raceid].speed * 1.3;
+    else
+    fa = cmdRace[maind.raceid].speed;
+              
+  
   fleetd.basetime = fleetd.time = (int)((int)( (float)a / fa ) >> 8);
 	
 	// units check
@@ -1574,13 +1570,13 @@ int cmdExecSendAgents( int id, int x, int y, int z, int order, int agents )
   else if( b == -3 )
     return -3;
 
+// CODE_speed_arti
+
+  if ( maind.artefacts & ARTEFACT_128_BIT)
+  fa = cmdRace[maind.raceid].speed * 1.3;
+  else
   fa = cmdRace[maind.raceid].speed;
-  //ARTI CODE Speed demon
-	//if(maind.artefacts & ARTEFACT_16_BIT)
-	//	fa *= 1.5;
-	//ARTI CODE Demon worker
-	//if(maind.artefacts & ARTEFACT_32_BIT)
-	//	fa *= 0.7;
+            
   
   fleetd.basetime = fleetd.time = (int)( (float)a / fa ) >> 8;
 
@@ -1658,14 +1654,14 @@ int cmdExecSendGhosts( int id, int x, int y, int z, int order, int ghosts )
   else if( b == -3 )
     return -3;
 
+// CODE_speed_arti
+
+  if ( maind.artefacts & ARTEFACT_128_BIT)
+  fa = cmdRace[maind.raceid].speed * 1.3;
+  else
   fa = cmdRace[maind.raceid].speed;
-  //ARTI CODE Speed demon
-	//if(maind.artefacts & ARTEFACT_16_BIT)
-	//	fa *= 1.5;
-	//ARTI CODE Demon worker
-	//if(maind.artefacts & ARTEFACT_32_BIT)
-	//	fa *= 0.7;
-  
+            
+    
   fleetd.basetime = fleetd.time = (int)( (float)a / fa ) >> 8;
   if( !( dbUserFleetRetrieve( id, 0, &fleet2d ) ) )
     return -3;
@@ -1828,14 +1824,15 @@ int cmdExecChangeFleet( int id, int x, int y, int z, int order, int fltid )
   fleetd.source = ( b << 20 ) + ( a << 8 );
   fleetd.order = order;
 
+// CODE_speed_arti
+
+  if ( maind.artefacts & ARTEFACT_128_BIT)
+  fa = cmdRace[maind.raceid].speed * 1.3;
+  else
   fa = cmdRace[maind.raceid].speed;
-  //ARTI CODE Speed demon	
-	//if(maind.artefacts & ARTEFACT_16_BIT)
-	//	fa *= 1.5;
-	//ARTI CODE Demon worker
-	//if(maind.artefacts & ARTEFACT_32_BIT)
-	//	fa *= 0.7;
-  
+            
+
+
   if( order == CMD_FLEET_ORDER_RECALL )
   {
     fleetd.sysid = 0;

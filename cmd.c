@@ -251,12 +251,12 @@ unsigned char *cmdGhostopName[CMD_GHOSTOP_NUMUSED] =
 
 int cmdAgentopTech[CMD_AGENTOP_NUMUSED] =
 {
-0, 0, 20, 40, 60, 80, 100, 120, 160, 100
+0, 0, 25, 40, 60, 80, 100, 120, 160, 100
 };
 
 int cmdPsychicopTech[CMD_PSYCHICOP_NUMUSED] =
 {
-0, 0, 0, 50, 70, 90, 110
+0, 10, 0, 50, 70, 90, 110
 };
 
 int cmdGhostopTech[CMD_GHOSTOP_NUMUSED] =
@@ -267,33 +267,33 @@ int cmdGhostopTech[CMD_GHOSTOP_NUMUSED] =
 
 float cmdAgentopReadiness[CMD_AGENTOP_NUMUSED] =
 {
-12.0, 5.0, 20.0, 18.0, 25.0, 22.0, 30.0, 20.0, 40.0, 15
+12.0, 5.0, 22.0, 18.0, 25.0, 22.0, 30.0, 20.0, 40.0, 15
 };
 
 float cmdPsychicopReadiness[CMD_PSYCHICOP_NUMUSED] =
 {
-12.0, 18.0, 30.0, 24.0, 30.0, 35.0, 40.0
+12.0, 22.0, 30.0, 24.0, 30.0, 35.0, 40.0
 };
 
 int cmdGhostopReadiness[CMD_GHOSTOP_NUMUSED] =
 {
-50, 20, 40, 30, 55, 40, 70
+50, 20, 40, 30, 60, 40, 70
 };
 
 
 float cmdAgentopDifficulty[CMD_AGENTOP_NUMUSED] =
 {
-1.0, 1.0, 3.5, 2.5, 4.0, 3.5, 4.5, 5.0, 6.0, 1.5
+1.0, 1.0, 3.9, 2.5, 4.0, 3.5, 4.5, 5.0, 6.0, 1.5
 };
 
 float cmdPsychicopDifficulty[CMD_PSYCHICOP_NUMUSED] =
 {
-1.5, 2.0, 2.5, 3.0, 4.0, 1.7, 5.0
+1.5, 2.4, 2.5, 3.0, 4.0, 1.7, 5.0
 };
 
 float cmdGhostopDifficulty[CMD_GHOSTOP_NUMUSED] =
 {
-1.0, 1.0, 2.0, 1.5, 1.0, 5.0, 6.0
+1.0, 1.0, 2.0, 1.5, 1.0, 5.0, 6.2
 };
 
 
@@ -706,12 +706,6 @@ void cmdGetBuildCosts( dbUserMainPtr maind, int type, long long int *buffer )
     for( a = 0 ; a < CMD_RESSOURCE_NUMUSED+1 ; a++ )
     {
       buffer[a] = ceil( cost * cmdBuildingCost[type][a] );
-      //ARTI CODE Speed demon
-	  	//if((maind->artefacts & ARTEFACT_16_BIT)&&(a == CMD_RESSOURCE_NUMUSED))
-	  	//	buffer[a] *= 1.2;
-	  	//ARTI CODE demon worker
-	  	//if((maind->artefacts & ARTEFACT_DEM_BIT)&&(a == CMD_RESSOURCE_NUMUSED))
-	  	//	buffer[a] *= 0.7;
     }
   }
   else

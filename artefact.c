@@ -12,31 +12,30 @@ Ectroverse Artefacts round #1 - ...
 
 unsigned char *artefactName[ARTEFACT_NUMUSED] =
 {
-"Network Backbone",
-"Super Stacker", 
-"The Foohon Ancenstry",
-"Romulan Military Outpost", 
+"Network Backbone", //ARTEFACT_1_BIT 1
+"Brainsapper", //ARTEFACT_2_BIT 2
+"Operations Guidebook", //ARTEFACT_4_BIT 4
+"Painful Military Parade", // ARTEFACT_8_BIT 8
 
-"Mineral Mine", 
-"Divine Stone",
-"Grand Silo",
-"Vulcan Fission Theory",
+"Ghost Amulet", //ARTEFACT_16_BIT 16
+"Mineral Throne", //ARTEFACT_32_BIT 32
+"Energy Paradigm", //ARTEFACT_64_BIT 64
+"Fussion Powered Hyperdrive", //ARTEFACT_128_BIT 128
 
-"Ether Gardens",
+"Ether Gardens", //ARTEFACT_ETHER_BIT 256
 };
-
 
 unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 {
 "The <b>Network Backbone</b> increases by +1%, the research maximum of every field except technology, for every 10%% of technology research!",
-"The <b>Super Stacker</b> increases the population limit of a city by 10000!",
-"The <b>Foohon Ancestry</b> gives all races 1 Research Point per 10000 population!",
-"The <b>Romulan Military Outpost</b> halves your units upkeep and reduces you energy production by 12%!",
+"The <b>Brainsapper</b> decreases your Agent and Psychic readiness to 75% and doubles the strength of Phantoms!",
+"The <b>Operations Guidebook</b> increases the operations research maximum by 30%!",
+"The <b>Painful Military Parade</b> halves your units upkeep and reduces your energy production by 30%!",
 
- "The <b>Mineral Mine</b> increases mineral production by 20% and decreases ectrolium production by 10%!",
-"The <b>Divine Stone</b> increases your culture research by 50% and decreases your technology research by 25%!",
-"The <b>Grand Silo</b> halves the decay of energy and crystal!",
-"The <b>Vulcan Fission Theory</b> lowers fission upkeep by 15% and increases output by 20%!", 
+"The <b>Ghost Amulet</b> increases the strength of Ghostships by 20%!",
+"The <b>Mineral Throne</b>, you rule by right on the Mineral Throne, but your Mineral production is reduces by 40%!",
+"The <b>Energy Paradigm</b> halves the decay of Energy!",
+"The <b>Fussion Powered Hyerdrive</b> decreases the output of Fission reactors by 20% and increases the travel speed by 30%!", 
 
 "The <b>Ether Gardens</b> increase your energy production by 10%!",
 };
@@ -44,14 +43,14 @@ unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 unsigned char *artefactImage[ARTEFACT_NUMUSED] =
 {
 "artimg4.gif",
-"artimg6.gif",
+"artimg12.gif",
 "artimg10.gif",
-"artimg11.gif",
+"artimg5.gif",
 
+"artimg3.gif",
+"mineralthrone.gif",
 "artimg2.gif",
-"artimg9.gif",
-"artimg7.gif",
-"artimg8.gif",
+"artimg14.gif",
 
 "artimg0.gif",
 };

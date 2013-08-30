@@ -361,7 +361,7 @@ void iohttpFunc_delete( svConnectionPtr cnt )
   }
   
         // SK: you can't delete when your empire is at war with someone or if you are declaring war on someone.
-      printf("---starting the check for deleting when in war.\n");
+//      printf("---starting the check for deleting when in war.\n");
      
      int counterRelations, maxRelations, curfam;
      dbMainEmpireDef empired;
@@ -373,8 +373,8 @@ void iohttpFunc_delete( svConnectionPtr cnt )
      empirestring = iohttpVarsFind( "id" );
      iohttpVarsCut();
      
-     printf("printing empirestring\n");
-     printf("%u\n",empirestring);
+//     printf("printing empirestring\n");
+//     printf("%u\n",empirestring);
      
      if( !( empirestring ) || ( sscanf( empirestring, "%d", &curfam ) <= 0 ) )
       curfam = maind.empire;
@@ -403,8 +403,8 @@ void iohttpFunc_delete( svConnectionPtr cnt )
         warCounter++;
       }
      }
-     printf("printing warcounter\n");
-      printf("%d\n",warCounter);
+//     printf("printing warcounter\n");
+//      printf("%d\n",warCounter);
       if( warCounter > 0 )
       {
              svSendPrintf( cnt, "You cannot delete when your empire is at war.<br><br>");
@@ -412,7 +412,7 @@ void iohttpFunc_delete( svConnectionPtr cnt )
             return;
       }
      
-     printf("---ending the check for deleting when in war.\n");
+//     printf("---ending the check for deleting when in war.\n");
 
   
   //cant delete for 24hrs after round start
@@ -1512,15 +1512,13 @@ void iohttpFunc_admin( svConnectionPtr cnt )
     forumd.tick = 0;
     forumd.flags = 0;
 
-
 /*
 
-
-    sprintf( forumd.title, "Announcements" );
+    sprintf( forumd.title, "News" );
     forumd.rperms = 0xFFF;
     forumd.wperms = 0;
     dbForumAddForum( &forumd, 0, 0 );
-
+    
     sprintf( forumd.title, "Ideas" );
     forumd.rperms = 0xFFF;
     forumd.wperms = 0xFFF;
@@ -1611,7 +1609,7 @@ void iohttpFunc_admin( svConnectionPtr cnt )
         dbUserSave( a, user );
       }
       dbUserMainSet( a, &maind );
-      svSendPrintf( cnt, "Player %d sets to moderator<br><br>", a );
+      svSendPrintf( cnt, "Player %d set to moderator<br><br>", a );
     }
   }
 
@@ -1627,7 +1625,7 @@ void iohttpFunc_admin( svConnectionPtr cnt )
         dbUserSave( a, user );
       }
       dbUserMainSet( a, &maind );
-      svSendPrintf( cnt, "Player %d sets to forum moderator<br><br>", a );
+      svSendPrintf( cnt, "Player %d set to forum moderator<br><br>", a );
     }
   }
 
@@ -1643,7 +1641,7 @@ void iohttpFunc_admin( svConnectionPtr cnt )
         dbUserSave( a, user );
       }
       dbUserMainSet( a, &maind );
-      svSendPrintf( cnt, "Player %d sets to player<br><br>", a );
+      svSendPrintf( cnt, "Player %d set to player<br><br>", a );
     }
   }
   

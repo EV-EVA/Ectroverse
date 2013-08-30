@@ -91,7 +91,7 @@ int battleReadinessLoss( dbUserMainPtr maind, dbUserMainPtr main2d )
     fa = powf( fa, 1.3 );
     fb = (float)(1+empired.planets*fFactor1) / (float)(1+empire2d.planets*fFactor2);
     fb = powf( fb, 1.8 );
-    max = 200.0;
+    max = 100.0;
   }
 
 
@@ -104,7 +104,7 @@ int battleReadinessLoss( dbUserMainPtr maind, dbUserMainPtr main2d )
     fa = 0.50;
 
 
-  fa *= 12.5;
+  fa *= 11.5;
 
   err = cmdErrorString;
   if( ( maind->empire == main2d->empire ) || ( cmdExecFindRelation( maind->empire, main2d->empire, 0, 0 ) == CMD_RELATION_WAR ) )
@@ -121,6 +121,7 @@ int battleReadinessLoss( dbUserMainPtr maind, dbUserMainPtr main2d )
     return (int)( max * 65536.0 );
   return (int)( fa * 65536.0 );
 }
+
 
 
 
@@ -279,7 +280,7 @@ int battle( int id, int fltid, int *results )
 		deffactor *= 1.1;
 		attfactor *= 0.9;
 	}
-		
+	
   // main portals fleet
   if( dbUserFleetRetrieve( defid, 0, &fleet2d ) < 0 )
     return -3;

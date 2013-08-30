@@ -196,7 +196,7 @@ void iohttpBodyInit( svConnectionPtr cnt, unsigned char *title, ... )
  svSendString( cnt, "<table cellspacing=\"0\" cellpadding=\"0\" width=\"90%\" border=\"0\" align=\"center\" background=\"i27.jpg\"><tr><td width=\"10%\"><img height=\"24\" src=\"i25.jpg\" width=\"22\"></td><td width=\"80%\" align=\"center\" nowrap><b><font face=\"verdana\" size=\"2\">" );
  svSendString( cnt, text );
  svSendString( cnt, "</font></b></td><td width=\"10%\" align=\"right\"><img height=\"24\" src=\"i30.jpg\" width=\"62\"></td></tr></table>" );
- svSendString( cnt, "<table cellspacing=\"0\" cellpadding=\"0\" width=\"90%\" border=\"0\" align=\"center\"><tr><td width=\"7\" background=\"i38.jpg\">&nbsp;</td><td bgcolor=\"#0C1921\" align=\"center\"><br>" );
+ svSendString( cnt, "<table cellspacing=\"0\" cellpadding=\"0\" width=\"90%\" border=\"0\" align=\"center\"><tr><td width=\"7\" background=\"i38.jpg\">&nbsp;</td><td bgcolor=\"#0b1119\" align=\"center\"><br>" );
  return;
 }
 
@@ -247,7 +247,7 @@ void iohttpFunc_races( svConnectionPtr cnt )
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Network Virus<br>Bio Infection<br>Energy Transfer<br>Military Sabotage<br><br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Sense Artefact<br>Portal Force Field<br>Mind Control<br>Energy Surge</td>" );
  svSendString( cnt, "</tr></table><br><br>" );
-	
+/*	
 	svSendString( cnt, "<h3>Furtifons</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>-10% Attack strength<br>-10% Research production<br>-10% Population upkeep reduction<br>+20% Agents strengths<br>+20% Ghost Ships strength<br>+60% Travel speed<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Culture Research production provides a psychic shield for planets<br>Double Operations research<br>Construction Research production limit of 250%</td>" );
@@ -262,7 +262,7 @@ void iohttpFunc_races( svConnectionPtr cnt )
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Incantations</i><br>Survey System<br>Mind Control<br>Energy Surge</td>" );
 	svSendString( cnt, "</tr></table><br><br>" );
 
-/* svSendString( cnt, "<h3>Ultimums</h3><table width=\"620\" border=\"0\"><tr>" );
+	svSendString( cnt, "<h3>Ultimums</h3><table width=\"620\" border=\"0\"><tr>" );
  svSendString( cnt, "<td valign=\"top\" width=\"340\"><i>Main bonuses</i><br>+70% stronger for all units<br><br>" );
  svSendString( cnt, "<i>Special</i><br>Double Research production points production <br>All Research production maximum are 250%<br>Each 4000 population produces a Research production point<br>Higher solars collectors efficiency by 15%</td>" );
  svSendString( cnt, "<td valign=\"top\" width=\"140\"><i>Operations</i><br>Spy Target<br>Observe Planet<br>Network Virus<br>Infiltration<br>Bio Infection<br>Energy Transfer<br>Military Sabotage<br><br>Nuke Planet<br>High Infiltration<br>Planetary Beacon<br><i>Spells</i><br>Irradiate Ectrolium<br>Dark Web<br>Incandescence<br>Black Mist<br>War Illusions<br>Psychic Assault<br>Phantoms</td>" );
@@ -666,9 +666,9 @@ void iohttpFunc_menu( svConnectionPtr cnt )
  svSendString( cnt, "<a href=\"mail?type=0\" target=\"main\">Messages</a><br><a href=\"rankings\" target=\"main\">Faction rankings</a><br><a href=\"famranks\" target=\"main\">Empire rankings</a><br>" );
  svSendString( cnt, "<a href=\"forum\" target=\"main\">Forums</a><br>" );
  svSendString( cnt, "<a href=\"account\" target=\"main\">Account</a><br>" );
- svSendString( cnt, "<a href=\"logout\" target=\"_top\">Logout</a><br>" );
+ svSendString( cnt, "<a href=\"logout\" target=\"_top\">Logout</a><br><br>" );
  
- svSendString( cnt, "<form action=\"search\" method=\"POST\" target=\"main\"><input type=\"text\" name=\"search\" size=\"10\" value=\"\"><input type=\"submit\" size=\"2\" value=\"OK\"></form>" );
+ svSendString( cnt, "<form action=\"search\" method=\"POST\" target=\"main\"><input type=\"text\" name=\"search\" size=\"10\" value=\"\"><input type=\"submit\" size=\"2\" value=\"OK\"></form><br>" );
  
  strcpy(szFaction, maind.faction);
  for(i=0;i<strlen(szFaction);i++)
@@ -685,7 +685,8 @@ void iohttpFunc_menu( svConnectionPtr cnt )
 			break;
 		}
 	}
- svSendString( cnt, "<a href=\"http://evtools.awardspace.com/starfury\" target=\"_top\">Guide</a><br>" );
+ svSendString( cnt, "<a href=\"http://evtools.awardspace.com/starfury\" target=\"blank\">Guide</a><br>" );
+ svSendString( cnt, "<a href=\"http://www.ectroverse.org:9122/chat\" target=\"blank\">Chat</a><br>" );
 
  if( cnt->dbuser )
  {
@@ -1230,14 +1231,14 @@ void iohttpNewsString( svConnectionPtr cnt, long long int *newsd )
    svSendPrintf( cnt, "in the system %lld,%lld<br>", ( newsd[4] >> 8 ) & 0xFFF, newsd[4] >> 20 );
   else
   {
-   svSendPrintf( cnt, "on the planet %lld,%lld:%lld", ( newsd[4] >> 8 ) & 0xFFF, newsd[4] >> 20, newsd[4] & 0xFF );
+   svSendPrintf( cnt, "on the <a href=\"planet?id=%lld\">planet %lld,%lld:%lld</a>", newsd[3], ( newsd[4] >> 8 ) & 0xFFF, newsd[4] >> 20, newsd[4] & 0xFF );
    if( ( user = dbUserLinkID( newsd[5] ) ) )
    {
     svSendPrintf( cnt, " owned by <a href=\"player?id=%lld\">%s</a> of <a href=\"empire?id=%lld\">empire #%lld</a><br>", newsd[5], user->faction, newsd[6], newsd[6] );
     if( newsd[7] <= 0 )
      svSendPrintf( cnt, "<i>Your ghost ships successfully stayed undiscovered during the incantation.</i><br>" );
     else
-     svSendPrintf( cnt, "<i>%lld of your ghost ships were obliterated by defending forces.</i><br>", newsd[7] );
+     svSendPrintf( cnt, "<i>%lld of your ghost ships were oblitered by defending forces.</i><br>", newsd[7] );
     if( newsd[8] > 0 )
      svSendPrintf( cnt, "<i>%lld defending psychics were killed.</i><br>", newsd[8] );
     if( newsd[9] > 0 )
@@ -1418,11 +1419,11 @@ void iohttpNewsString( svConnectionPtr cnt, long long int *newsd )
 
 
  else if( newsd[2] == CMD_NEWS_OPCANCEL )
-  svSendPrintf( cnt, "An agents operation has been canceled." );
+  svSendPrintf( cnt, "An agents operation has been cancelled." );
  else if( newsd[2] == CMD_NEWS_SPCANCEL )
-  svSendPrintf( cnt, "A psychics spell has been canceled." );
+  svSendPrintf( cnt, "A psychics spell has been cancelled." );
  else if( newsd[2] == CMD_NEWS_INCANCEL )
-  svSendPrintf( cnt, "A ghost ships incantation has been canceled." );
+  svSendPrintf( cnt, "A ghost ships incantation has been cancelled." );
 
  else if( newsd[2] != -1 )
   svSendPrintf( cnt, "Unknown report code : %lld ( tell the admin, thanks ;) )", newsd[2] );
@@ -1722,14 +1723,14 @@ void iohttpFamNews( svConnectionPtr cnt, int num, long long int *newsd, dbMainEm
     svSendPrintf( cnt, "in the system %lld,%lld<br>", ( newsd[4] >> 8 ) & 0xFFF, newsd[4] >> 20 );
    else
    {
-    svSendPrintf( cnt, "on the planet %lld,%lld:%lld", ( newsd[4] >> 8 ) & 0xFFF, newsd[4] >> 20, newsd[4] & 0xFF );
+    svSendPrintf( cnt, "on the <a href=\"planet?id=%lld\">planet %lld,%lld:%lld</a>", newsd[3], ( newsd[4] >> 8 ) & 0xFFF, newsd[4] >> 20, newsd[4] & 0xFF );
     if( ( user = dbUserLinkID( newsd[5] ) ) )
     {
      svSendPrintf( cnt, " owned by <a href=\"player?id=%lld\">%s</a> of <a href=\"empire?id=%lld\">empire #%lld</a><br>", newsd[5], user->faction, newsd[6], newsd[6] );
      if( newsd[7] <= 0 )
       svSendPrintf( cnt, "<i>The ghost ships successfully stayed undiscovered during the incantation.</i><br>" );
      else
-      svSendPrintf( cnt, "<i>%lld ghost ships were obliterated by defending forces.</i><br>", newsd[7] );
+      svSendPrintf( cnt, "<i>%lld ghost ships were oblitered by defending forces.</i><br>", newsd[7] );
      if( newsd[8] > 0 )
       svSendPrintf( cnt, "<i>%lld defending psychics were killed.</i><br>", newsd[8] );
      if( newsd[9] > 0 )
@@ -1829,8 +1830,8 @@ void iohttpFunc_hq( svConnectionPtr cnt )
 
  svSendPrintf( cnt, "User <b>%s</b><br>Faction <b>%s</b><br><br>", cnt->dbuser->name, maind.faction );
 	
-	if(svRoundEnd)
-		svSendPrintf( cnt, "<a href=\"?page=Vote&id=%d&key=%s\">Click here to vote for the End of Round award</a>", id, sMd5);
+//	if(svRoundEnd)
+//		svSendPrintf( cnt, "<a href=\"?page=Vote&id=%d&key=%s\">Click here to vote for the End of Round award</a>", id, sMd5);
 
  svSendPrintf( cnt, "<table width=\"400\" border=\"0\"><tr><td align=\"center\">Empire : #%d<br>Planets : %d<br>Population : %lld0<br>Networth : %lld</td>", maind.empire, maind.planets, maind.ressource[CMD_RESSOURCE_POPULATION], maind.networth );
  svSendPrintf( cnt, "<td align=\"center\">Fleet readiness : %d%%<br>Psychics readiness : %d%%<br>Agents readiness : %d%%<br>Home planet : %d,%d:%d</td></tr></table><br>", maind.readiness[0] >> 16, maind.readiness[1] >> 16, maind.readiness[2] >> 16, ( maind.home >> 8 ) & 0xFFF, maind.home >> 20, maind.home & 0xFF );
@@ -3468,7 +3469,7 @@ void iohttpFunc_famleader( svConnectionPtr cnt )
  svSendString( cnt, "<tr><td><input type=\"submit\" value=\"Change\"></form><br><br><br></td></tr>" );
 
  svSendString( cnt, "<tr><td><table cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">" );
- svSendString( cnt, "<tr><td width=\"40%\"><form action=\"famleader\" method=\"POST\">Offer an alliance to an empire</td><td width=\"60%\" rowspan=\"4\" valign=\"top\">" );
+// svSendString( cnt, "<tr><td width=\"40%\"><form action=\"famleader\" method=\"POST\">Offer an alliance to an empire</td><td width=\"60%\" rowspan=\"4\" valign=\"top\">" );
  if( ( b = dbEmpireRelsList( curfam, &rel ) ) >= 0 )
  {
   svSendString( cnt, "<b>Empire relations</b><br><br>" );
@@ -4122,7 +4123,7 @@ void iohttpFunc_player( svConnectionPtr cnt )
   return;
  }
  iohttpBodyInit( cnt, main2d.faction );
- svSendPrintf( cnt, "<table border=\"0\"><tr><td><a href=\"empire?id=%d\">Empire : #%d</a><br>Networth : %lld<br>Planets : %d<br>Race : %s<br>Population : %lld0<br>Home planet : %d,%d:%d<br><br>Faction ID : %d<br><a href=\"mail?to=%d\">Send a message</a><br><a href=\"map?e0=4&u0=%d&c0=5\">Display planets on map</a><br><a href=\"map?e0=1&u0=&c0=3&e1=4&u1=%d&c1=5\">Display planets on map with yours</a><br><a href=\"playerlist?id=%d\">See planets list</a><br><br></td></tr></table>", main2d.empire, main2d.empire, main2d.networth, main2d.planets, cmdRaceName[main2d.raceid], main2d.ressource[CMD_RESSOURCE_POPULATION], ( main2d.home >> 8 ) & 0xFFF, main2d.home >> 20, main2d.home & 0xFF, playerid, playerid, playerid, playerid, playerid );
+ svSendPrintf( cnt, "<table border=\"0\"><tr><td><a href=\"empire?id=%d\">Empire : #%d</a><br>Networth : %lld<br>Planets : %d<br>Race : %s<br>Forum tag : <b>%s</b><br>Population : %lld0<br>Home planet : %d,%d:%d<br><br>Faction ID : %d<br><a href=\"mail?to=%d\">Send a message</a><br><a href=\"map?e0=4&u0=%d&c0=5\">Display planets on map</a><br><a href=\"map?e0=1&u0=&c0=3&e1=4&u1=%d&c1=5\">Display planets on map with yours</a><br><a href=\"playerlist?id=%d\">See planets list</a><br><br></td></tr></table>", main2d.empire, main2d.empire, main2d.networth, main2d.planets, cmdRaceName[main2d.raceid], main2d.forumtag, main2d.ressource[CMD_RESSOURCE_POPULATION], ( main2d.home >> 8 ) & 0xFFF, main2d.home >> 20, main2d.home & 0xFF, playerid, playerid, playerid, playerid, playerid );
 
  if( dbUserDescRetrieve( playerid, &descd ) >= 0 )
  {
@@ -4281,7 +4282,11 @@ void iohttpFunc_planet( svConnectionPtr cnt )
   if( planetd.flags & CMD_PLANET_FLAGS_HOME )
    svSendPrintf( cnt, "No one owns this planet, but it is part of a home system and unavailable for exploration" );
   else
-   svSendPrintf( cnt, "No one owns this planet, it is free to explore.<br><br><a href=\"explore?id=%d\">Explore this planet</a><br><br><a href=\"spec?id=%d\">Special operation</a>", plnid, plnid );
+	  if(planetHasABadBonus(plnid) == 0) {
+		  svSendPrintf( cnt, "No one owns this planet, it is free to explore.<br><br><a href=\"explore?id=%d\">Explore this planet</a><br><br><a href=\"spec?id=%d\">Special operation</a>", plnid, plnid );
+	  } else {
+		  svSendPrintf( cnt, "This planet cannot sustain life.");
+	  }
  }
  else if( planetd.owner == id )
  {
@@ -4513,6 +4518,7 @@ void iohttpFunc_build( svConnectionPtr cnt )
  if( !( iohttpHeader( cnt, id, &maind ) ) )
   return;
  iohttpBodyInit( cnt, "Build on planet %d,%d:%d", ( planetd.position >> 8 ) & 0xFFF, planetd.position >> 20, planetd.position & 0xFF );
+ svSendString( cnt, "<a href=\"stats\">Building Information</a><br><br>" );
  for( a = 0 ; a < CMD_BLDG_NUMUSED+1 ; a++ )
  {
   if( buildstring[a][0] )
@@ -4839,7 +4845,7 @@ cmdExecAddBuild !!!
  }
 
  iohttpBodyInit( cnt, "Build on %d planets", totalpl );
-
+ svSendString( cnt, "<a href=\"stats\">Building Information</a><br><br>" );
  svSendString( cnt, buildstring );
 
  svSendString( cnt, "<table><tr><td>" );
@@ -4911,7 +4917,7 @@ cmdExecAddBuild !!!
  return;
 }
 
-
+/*
 //Use to chat on irc
 void iohttpFunc_chat( svConnectionPtr cnt )
 {
@@ -4944,7 +4950,7 @@ void iohttpFunc_chat( svConnectionPtr cnt )
 
 	return;
 }
-
+*/
 void iohttpFunc_raze( svConnectionPtr cnt )
 {
  int a, b, c, id, cmd[5], plnid, totalb;
@@ -5950,7 +5956,7 @@ void iohttpFunc_explore( svConnectionPtr cnt )
   return;
  }
 
- if( explorestring )
+ if( explorestring && (planetHasABadBonus(plnid) == 0) )
  {
   if( ( cmdExecExplore( id, plnid, &explore ) ) < 0 )
   {
@@ -6182,6 +6188,9 @@ void iohttpFunc_spec( svConnectionPtr cnt )
  svSendPrintf( cnt, "<b>Operations</b><br>" );
  for( a = 0 ; a < CMD_AGENTOP_NUMUSED ; a++ )
  {
+ 	//ARTI CODE Nuker
+ 	//if(!((maind.artefacts & ARTEFACT_NUK_BIT)&&(a == CMD_OPER_NUKEPLANET )))
+ 	//{
 	  if( !( specopAgentsAllowed( a, maind.raceid ) ) )
 	  	continue;
 	//}
@@ -7522,11 +7531,17 @@ void iohttpFunc_mail( svConnectionPtr cnt )
   if( tostring )
   {
    for( a = 0 ; ( a < 31 ) && ( tostring[a] ) ; a++ )
+//   for( a = 0 ; ( a < 31 ) && ( tostring[a] ) ; a++ )
    {
     if( tostring[a] == '+' )
      tostring[a] = ' ';
+//         if( tostring[a] == '+' )
+  //            tostring[a] = ' ';
     else if( ( tostring[a] == 10 ) || ( tostring[a] == 13 ) )
      tostring[a] = 0;
+  //    else if( ( tostring[a] == 10 ) || ( tostring[a] == 13 ) )
+   //        tostring[a] = 0;
+           
    }
    tostring[a] = 0;
    svSendPrintf( cnt, "<input type=\"text\" name=\"to\" size=\"32\" value=\"%s\">", tostring );
@@ -8527,7 +8542,8 @@ void iohttpForum( svConnectionPtr cnt )
   {
    svSendPrintf( cnt, "<form action=\"forum\" method=\"POST\"><input type=\"hidden\" name=\"forum\" value=\"%d\"><table cellspacing=\"3\"><tr><td>Name</td><td>", forum );
    if( id == -1 )
-    svSendPrintf( cnt, "<input type=\"text\" name=\"name\" size=\"32\">" );
+//    svSendPrintf( cnt, "<input type=\"text\" name=\"name\" size=\"32\">" );
+   return; 
    else
     svSendPrintf( cnt, "%s<input type=\"hidden\" name=\"name\" value=\"%s\">", (cnt->dbuser)->faction, (cnt->dbuser)->faction );
    svSendString( cnt, "</td></tr><tr><td>Topic</td><td><input type=\"text\" name=\"topic\" size=\"32\"></td></tr>" );
@@ -8636,7 +8652,8 @@ void iohttpForum( svConnectionPtr cnt )
   {
    svSendPrintf( cnt, "<form action=\"forum\" method=\"POST\"><input type=\"hidden\" name=\"forum\" value=\"%d\"><input type=\"hidden\" name=\"thread\" value=\"%d\"><table cellspacing=\"3\"><tr><td>Name</td><td>", forum, thread );
    if( id == -1 )
-    svSendPrintf( cnt, "<input type=\"text\" name=\"name\" size=\"32\">" );
+   return;
+  //  svSendPrintf( cnt, "<input type=\"text\" name=\"name\" size=\"32\">" );
    else
     svSendPrintf( cnt, "%s<input type=\"hidden\" name=\"name\" value=\"%s\">", (cnt->dbuser)->faction, (cnt->dbuser)->faction );
    svSendString( cnt, "</td></tr><tr><td>Post</td><td><textarea name=\"post\" wrap=\"soft\" rows=\"10\" cols=\"60\"></textarea></td></tr><tr><td>&nbsp;</td><td><input type=\"submit\" value=\"Post\"></td></tr></table></form>" );
@@ -8876,8 +8893,14 @@ void iohttpForum( svConnectionPtr cnt )
  return;
 }
 
-
-
-
-
-
+int planetHasABadBonus(int plnid)
+{
+	int badPlanetIds[360] = {};
+	int i;
+    for(i = 0; i < 360; i++) {
+	   if(badPlanetIds[i] == plnid) {
+		   return 1;
+	   }
+    }
+    return 0;
+} 

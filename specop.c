@@ -20,7 +20,6 @@ int specopGhostsAllowed( int specop, int raceid )
   return 1;
 }
 
-
 int specopAgentsReadiness( int specop, dbUserMainPtr maind, dbUserMainPtr main2d )
 {
 	int penalty, rel;
@@ -612,13 +611,6 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 		  newd[2] += CMD_NEWS_OPSPYTARGET_TARGET - CMD_NEWS_OPSPYTARGET;
 		  newd[5] = id;
 		  newd[6] = maind.empire;
-		  
-		  //ARTI CODE Cloak Of Invisibility
-			/*if(maind.artefacts & ARTEFACT_8_BIT)
-			{
-				newd[5] = 0;  //Report ops by admin
-				newd[6] = 0;
-			}*/
 			
 		  if(id != planetd.owner)
 		  	cmdUserNewsAdd( planetd.owner, newd, CMD_NEWS_FLAGS_ATTACK );
@@ -1002,6 +994,11 @@ void specopPsychicsPerformOp( int id, int targetid, int specop, int psychics, lo
     newd[2] = CMD_NEWS_SPPHANTOMS;
 
 
+// CODE_ARTEFACT
+  if( maind.artefacts & ARTEFACT_2_BIT )
+    attack *= 2.0;
+// CODE_ARTEFACT
+
 
     j = attack / 2;
     
@@ -1192,6 +1189,11 @@ void specopGhostsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
     return;
   fa = 0.6 + (0.8/255.0) * (double)( rand() & 255 );
  
+ // CODE_ARTI ARTEFACT_16_BIT
+
+if( maind.artefacts & ARTEFACT_16_BIT )
+  attack = (int)( ( fa * cmdRace[maind.raceid].unit[CMD_UNIT_GHOST] * (float)(fleetd->unit[CMD_UNIT_GHOST]) * ( 1.0 + 0.01*maind.totalresearch[CMD_RESEARCH_WELFARE] ) ) / (float)cmdGhostopDifficulty[specop] *1.2);
+else //code arti
 	attack = (long long int)( ( fa * cmdRace[maind.raceid].unit[CMD_UNIT_GHOST] * (double)(fleetd->unit[CMD_UNIT_GHOST]) * ( 1.0 + 0.01*maind.totalresearch[CMD_RESEARCH_WELFARE] ) ) / (double)cmdGhostopDifficulty[specop] ); 
   
 	if( penalty )
@@ -1274,7 +1276,7 @@ void specopGhostsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
     {
       dx = ( ( dbArtefactPos[a] >> 8 ) & 0xFFF ) - x;
       dy = ( dbArtefactPos[a] >> 20 ) - y;
-      fb = sqrt( (double)( dx*dx + dy*dy ) );
+      fb = sqrt( (double)( 1 + dx*dx + dy*dy ) );
       if( fb > fa )     
         continue;
       newd[11] = 0x10000 | (int)( fa / fb );

@@ -603,7 +603,7 @@ CMD_RACE_ULTI
 };
 
 
-#define CMD_RACE_NUMUSED 8
+#define CMD_RACE_NUMUSED 6 
 
 
 typedef struct

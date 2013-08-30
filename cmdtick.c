@@ -363,9 +363,9 @@ svDebugTickPass = 1 + 10000;
 		planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * CMD_POPULATION_CITIES ) );
 		
 		//ARTI CODE Super Stacker
-		if(mainp->artefacts & ARTEFACT_2_BIT)
+	/*	if(mainp->artefacts & ARTEFACT_*_BIT)
 			planetd.maxpopulation = (float)( ( planetd.size * CMD_POPULATION_SIZE_FACTOR ) + ( planetd.building[CMD_BUILDING_CITIES] * (CMD_POPULATION_CITIES+1000) ) );
-		
+	*/	
 svDebugTickPass = 2 + 10000;
 		
 		//No more pop grow bonus it will count as upkeep reducer multiplier
@@ -658,10 +658,10 @@ svDebugTickPass = 5;
     	if( cmdRace[maind.raceid].special & CMD_RACE_SPECIAL_POPRESEARCH )
         	fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
 		
-			//ARTI CODE Foohon Ancestry
-			if(maind.artefacts & ARTEFACT_4_BIT)
+	/*		//ARTI CODE Foohon Ancestry
+			if(maind.artefacts & ARTEFACT_*_BIT)
 				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
-								
+	*/							
 			
 			
 		maind.research[a] += cmdRace[maind.raceid].researchpoints[a] * fa;
@@ -680,17 +680,14 @@ svDebugTickPass = 6;
      
           //research maximum
           fa = cmdRace[maind.raceid].researchmax[CMD_RESEARCH_TECH];
-               printf("max TECH research percentage: %c \n", fa);
      
-            //      ARTI CODE Divine Stone
-                    if(maind.artefacts & ARTEFACT_32_BIT)
+      /*      //      ARTI CODE Divine Stone
+                    if(maind.artefacts & ARTEFACT_*_BIT)
                             fa -= 25;
-     
-                    printf("modified TECH research percentage: %c \n", fa);
+     */
      
           b = fa * ( 1.0 - exp( (double)maind.research[CMD_RESEARCH_TECH] / ( -10.0 * (double)maind.networth ) ) );
      
-              printf("total tech research percentage: %d \n", b);
      
           if( b > maind.totalresearch[CMD_RESEARCH_TECH] )
             maind.totalresearch[CMD_RESEARCH_TECH]++;
@@ -698,7 +695,6 @@ svDebugTickPass = 6;
             maind.totalresearch[CMD_RESEARCH_TECH]--;
      
               addedFromTech = b/10;
-              printf("added from tech: %c \n", addedFromTech);
      
      
     // calculate total research
@@ -709,16 +705,11 @@ svDebugTickPass = 6;
      
           //research maximum
           fa = cmdRace[maind.raceid].researchmax[a];
-     
-     
-              printf("reasearchtype: %c \n",a);
-              printf("researchmax by race: %c \n", fa);
-         
-         
-        //ARTI CODE Divine Stone
-                    if((maind.artefacts & ARTEFACT_32_BIT)&&(a == CMD_RESEARCH_WELFARE))
-                      fa += 50;
-                           
+
+	// CODE_ARTI
+      if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_OPERATIONS ) )
+        fa += 30.0;
+			
      
         // put this arti last, you need the other ones calculated before this one.
             //ARTI CODE network backbone    
@@ -728,13 +719,10 @@ svDebugTickPass = 6;
            if( a != CMD_RESEARCH_TECH)
                {
                 fa += addedFromTech;
-                            printf("total with addition: %c \n", fa);
                }
         }
 
           b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
-     
-              printf("total research percentage: %d \n", b);
           if( b > maind.totalresearch[a] )
             maind.totalresearch[a]++;
           else if( b < maind.totalresearch[a] )
@@ -760,13 +748,13 @@ svDebugTickPass = 7;
 
 	//ARTI CODE Romulan Military outpost
 	if(maind.artefacts & ARTEFACT_8_BIT)
-		fa *= 0.88;	
+		fa *= 0.70;	
 			
 	fb = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ENERGY] * ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_ENERGY] );
 
-	//ARTI CODE Vulcan Fission Theory
-	if(maind.artefacts & ARTEFACT_128_BIT)
-		fb *= 1.2;
+	//ARTI CODE fission artefact
+	if((maind.artefacts & ARTEFACT_128_BIT)&&( a == CMD_BUILDING_FISSION)) 
+		fa *= 0.8;
 		
   maind.infos[4] = (long long int)( fa * fb );
     
@@ -782,7 +770,7 @@ svDebugTickPass = 7;
     
   fa = CMD_ENERGY_DECAY;
   
-  //ARTI CODE Grand Silo
+  //ARTI CODE Grand Silo | Halves the decay of Energy
 	if(maind.artefacts & ARTEFACT_64_BIT)
 	fa /= 2;	
 		
@@ -793,15 +781,9 @@ svDebugTickPass = 7;
   for( a = 0 ; a < CMD_BLDG_NUMUSED ; a++ )
   {
   	if( ( a == CMD_BUILDING_SOLAR ) || ( a == CMD_BUILDING_FISSION ) )
-  	{
-  		//ARTI CODE Vulcan Fission Theory
-		 if((maind.artefacts & ARTEFACT_128_BIT)&&( a == CMD_BUILDING_FISSION ))
-				maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb * 0.85;
-			else
-      	maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb;
-    }
-    else
-      maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a];
+   	  maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a] * fb;
+        else
+          maind.infos[6] += ((float)cmdTickProduction[a])*cmdBuildingUpkeep[a];
   
   }
     
@@ -837,9 +819,9 @@ svDebugTickPass = 8;
 
 		fa = CMD_CRYSTAL_DECAY;
 		
-		//ARTI CODE Granary
-		if(maind.artefacts & ARTEFACT_64_BIT)
-		fa /= 2;
+		//ARTI CODE Crystalline Entity | reduces crystal decay by 75%
+	//	if(maind.artefacts & ARTEFACT_*_BIT)
+	//	fa /= 4;
     	
     maind.infos[10] = fa * (double)maind.ressource[CMD_RESSOURCE_CRYSTAL];
     
@@ -861,13 +843,12 @@ svDebugTickPass = 8;
 	
 	maind.infos[CMD_RESSOURCE_ECTROLIUM] = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ECTROLIUM] * (float)(cmdTickProduction[CMD_BUILDING_REFINEMENT]);
 		
-	//ARTI CODE Mineral mine
-	if(maind.artefacts & ARTEFACT_16_BIT)
+	//ARTI CODE Mineral Throne
+		if(maind.artefacts & ARTEFACT_32_BIT)
 	{
-		maind.infos[CMD_RESSOURCE_MINERAL] *= 1.20;
-		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 0.90;
+		maind.infos[CMD_RESSOURCE_MINERAL] *= 0.60;
 	}
-		
+	
 svDebugTickPass = 9;
 
 
@@ -896,14 +877,26 @@ svDebugTickPass = 9;
         maind.readiness[c] += a;
 
 			
+// CODE_ARTEFACT
+    if( ( maind.artefacts & ARTEFACT_2_BIT ) && ( c != 0 ) )
+    {
+      if( maind.readiness[c] > 65536*75 )
+        maind.readiness[c] = 65536*75;
+	}
+    else
+    {
+      if( maind.readiness[c] > 65536*100 )
+        maind.readiness[c] = 65536*100;
+   }
+// CODE_ARTEFACT
 
-			if( maind.readiness[c] > 65536*100 )
+/*			if( maind.readiness[c] > 65536*100 )
 				maind.readiness[c] = 65536*100;
+*/
 
-/*
       if( maind.readiness[c] < -65536*500 )
         maind.readiness[c] = -65536*500;
-*/
+
     }
 
 

@@ -513,9 +513,9 @@ void InitHTTP()
   sprintf( file->path, "/admin" );
   
   file = iohttpFileAdd( 0 );
-  file->type = 1;
-  file->function = iohttpFunc_chat;
+  file->type = 2;
   sprintf( file->path, "/chat" );
+  sprintf( file->fileread, "chat.html" );
 
   file = iohttpFileAdd(0);
   file->type = 1;
@@ -526,7 +526,11 @@ void InitHTTP()
   file->type = 1;
   file->function = iohttpFunc_Approve;
   sprintf( file->path, "/approve" );
-
+  
+  file = iohttpFileAdd( 0 );
+  file->type = 2;
+  sprintf( file->path, "/stats" );
+  sprintf( file->fileread, "stats.html" );
   return;
 }
 
