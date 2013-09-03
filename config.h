@@ -32,7 +32,7 @@
 #define STOP_TIME "May 14 16:00"
 
 
-#define ROUND_ID (7)
+#define ROUND_ID (8)
 #define DELAY_TIME (00)
 
 #define SV_TICK_FILE "/var/www/ectroverse.org/data/ticks"

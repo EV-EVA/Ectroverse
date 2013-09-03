@@ -281,6 +281,10 @@ int battle( int id, int fltid, int *results )
 		attfactor *= 0.9;
 	}
 	
+	// CODE_ARTEFACT
+  if( main2d.artefacts & ARTEFACT_2_BIT )
+    deffactor *= 1.25;
+	
   // main portals fleet
   if( dbUserFleetRetrieve( defid, 0, &fleet2d ) < 0 )
     return -3;

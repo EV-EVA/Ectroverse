@@ -208,21 +208,25 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	    return;
 	  if( dbUserMainRetrieve( id, &maind ) < 0 )
 	    return;
+<<<<<<< HEAD
 	  if( ( maind.readiness[2] < 0 ) || (( planetd.owner == id )&&(fleetd->order!=CMD_FLEET_ORDER_PLANETBEACON) && (fleetd->order!=CMD_FLEET_ORDER_NUKEPLANET)) ||  !( svTickStatus ) )
+=======
+	   if( ( maind.readiness[2] < 0 ) || (( planetd.owner == id )&&(fleetd->order!=CMD_FLEET_ORDER_PLANETBEACON) && (fleetd->order!=CMD_FLEET_ORDER_NUKEPLANET)) ||  !( svTickStatus ) )
+>>>>>>> Updated to Round #8 code
 	  {
 	  	cmdUserNewsAdd( id, newd, postnew );
 	    return;
 	  }
 	  
-	  //ARTI CODE Nuker
-	 // if(!((maind.artefacts & ARTEFACT_NUK_BIT)&&(specop == CMD_OPER_NUKEPLANET )))
-	//  {
+	  //ARTI CODE grant operation all races
+	  if(!((maind.artefacts & ARTEFACT_1_BIT)&&(specop == CMD_OPER_OBSERVEPLANET )))
+	  {
 	  	if( !( specopAgentsAllowed( specop, maind.raceid ) ) )
 		  {
 		    cmdUserNewsAdd( id, newd, postnew );
 		    return;
 		  }
-	//	}
+		}
 		penalty = cmdGetOpPenalty( maind.totalresearch[CMD_RESEARCH_OPERATIONS], cmdAgentopTech[specop] );
 	  if( penalty == -1 )
 	    return;
@@ -994,10 +998,10 @@ void specopPsychicsPerformOp( int id, int targetid, int specop, int psychics, lo
     newd[2] = CMD_NEWS_SPPHANTOMS;
 
 
-// CODE_ARTEFACT
-  if( maind.artefacts & ARTEFACT_2_BIT )
+//CODE_ARTEFACT for double phantom strength
+  if( maind.artefacts & ARTEFACT_16_BIT )
     attack *= 2.0;
-// CODE_ARTEFACT
+ //CODE_ARTEFACT 
 
 
     j = attack / 2;
@@ -1103,6 +1107,12 @@ int specopGhostsReadiness( int specop, dbUserMainPtr maind, dbUserMainPtr main2d
   if( ( maind->empire == main2d->empire ) || ( rel == CMD_RELATION_WAR ) || ( rel == CMD_RELATION_ALLY ) )
     fa /= 3.0;
 
+	
+// CODE_ARTEFACT
+  if( ( maind->artefacts & ARTEFACT_128_BIT ) && ( specop == CMD_INCANT_ENERGYSURGE ) )
+    fa *= 0.5;
+// CODE_ARTEFACT	
+	
   if( fa >= 300.0 )
     return (int)( 300.0 * 65536.0 );
   return (int)( fa * 65536.0 );

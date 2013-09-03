@@ -41,7 +41,7 @@
 
 #define MAP_SIZEX (105)
 #define MAP_SIZEY (105)
-#define MAP_SYSTEMS (699)
+#define MAP_SYSTEMS (709)
 
 #define MAP_FAMILIES (61)
 #define MAP_FAMMEMBERS (7)

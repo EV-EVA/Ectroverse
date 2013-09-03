@@ -707,20 +707,32 @@ svDebugTickPass = 6;
           fa = cmdRace[maind.raceid].researchmax[a];
 
 	// CODE_ARTI
-      if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_OPERATIONS ) )
-        fa += 30.0;
-			
+      if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_ENERGY ) )
+        fa += 25.0;
+		
+	// CODE_ARTI
+      if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_MILITARY ) )
+        fa += 25.0;		
      
         // put this arti last, you need the other ones calculated before this one.
+<<<<<<< HEAD
         /*    //ARTI CODE network backbone but this block back on to put it back in    
         if(maind.artefacts & ARTEFACT_1_BIT)
+=======
+         /*   //ARTI CODE network backbone    
+        if(maind.artefacts & ARTEFACT_*_BIT)
+>>>>>>> Updated to Round #8 code
         {
            // exclude tech research from having this bonus (otherwise there is no cap)
            if( a != CMD_RESEARCH_TECH)
                {
                 fa += addedFromTech;
                }
+<<<<<<< HEAD
         } */
+=======
+        }*/
+>>>>>>> Updated to Round #8 code
 
           b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
           if( b > maind.totalresearch[a] )
@@ -746,15 +758,15 @@ svDebugTickPass = 7;
 	if(maind.artefacts & ARTEFACT_ETHER_BIT)
 		fa *= 1.10;	
 
-	//ARTI CODE Romulan Military outpost
+	//ARTI CODE Ether Palace
 	if(maind.artefacts & ARTEFACT_8_BIT)
-		fa *= 0.70;	
+		fa *= 1.25;	
 			
 	fb = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ENERGY] * ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_ENERGY] );
 
-	//ARTI CODE fission artefact
-	if((maind.artefacts & ARTEFACT_128_BIT)&&( a == CMD_BUILDING_FISSION)) 
-		fa *= 0.8;
+	//ARTI CODE Ether Palace
+	if((maind.artefacts & ARTEFACT_32_BIT)&&( a == CMD_BUILDING_SOLAR)) 
+		fa *= 1.30;
 		
   maind.infos[4] = (long long int)( fa * fb );
     
@@ -769,10 +781,7 @@ svDebugTickPass = 7;
   */
     
   fa = CMD_ENERGY_DECAY;
-  
-  //ARTI CODE Grand Silo | Halves the decay of Energy
-	if(maind.artefacts & ARTEFACT_64_BIT)
-	fa /= 2;	
+  	
 		
   maind.infos[5] = fa * (double)maind.ressource[CMD_RESSOURCE_ENERGY];
 
@@ -803,8 +812,8 @@ svDebugTickPass = 8;
 			maind.infos[7] += ((float)maind.totalunit[a])*cmdUnitUpkeep[a];
 		}
 		//ARTI CODE Romulan Military Outpost
-		if(maind.artefacts & ARTEFACT_8_BIT)
-		maind.infos[7] *= 0.5;	
+		if(maind.artefacts & ARTEFACT_16_BIT)
+		maind.infos[7] *= 1.5;	
 		maind.infos[8] = (1.0/35.0) * (float)maind.ressource[CMD_RESSOURCE_POPULATION]* ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_WELFARE] ) * (cmdRace[maind.raceid].growth);
     
     
@@ -843,12 +852,16 @@ svDebugTickPass = 8;
 	
 	maind.infos[CMD_RESSOURCE_ECTROLIUM] = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ECTROLIUM] * (float)(cmdTickProduction[CMD_BUILDING_REFINEMENT]);
 		
-	//ARTI CODE Mineral Throne
-		if(maind.artefacts & ARTEFACT_32_BIT)
+	//ARTI CODE Mineral enhancement
+		if(maind.artefacts & ARTEFACT_64_BIT)
 	{
-		maind.infos[CMD_RESSOURCE_MINERAL] *= 0.60;
+		maind.infos[CMD_RESSOURCE_MINERAL] *= 1.50;
 	}
-	
+/*	//ARTI CODE Ectrolim enhancement
+		if(maind.artefacts & ARTEFACT_xxxx_BIT)
+	{
+		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 1.50;
+	}	*/
 svDebugTickPass = 9;
 
 
@@ -877,24 +890,24 @@ svDebugTickPass = 9;
         maind.readiness[c] += a;
 
 			
-// CODE_ARTEFACT
-    if( ( maind.artefacts & ARTEFACT_2_BIT ) && ( c != 0 ) )
+/* CODE_ARTEFACT 
+    if( ( maind.artefacts & ARTEFACT_*_BIT ) && ( c != 0 ) )
     {
-      if( maind.readiness[c] > 65536*75 )
-        maind.readiness[c] = 65536*75;
+      if( maind.readiness[c] > 65536*75 ) //alter this to increase or decrease the readiness, currently decreased to 75%
+        maind.readiness[c] = 65536*75;	//alter this to increase or decrease the readiness, currently decreased to 75%
 	}
     else
     {
       if( maind.readiness[c] > 65536*100 )
         maind.readiness[c] = 65536*100;
    }
-// CODE_ARTEFACT
+ CODE_ARTEFACT*/
 
-/*			if( maind.readiness[c] > 65536*100 )
-				maind.readiness[c] = 65536*100;
-*/
+	if( maind.readiness[c] > 65536*100 )
+		maind.readiness[c] = 65536*100;
 
-      if( maind.readiness[c] < -65536*500 )
+
+    if( maind.readiness[c] < -65536*500 )
         maind.readiness[c] = -65536*500;
 
     }
@@ -1034,8 +1047,7 @@ svDebugTickPass = 12;
       	if(specopd[a].type == CMD_OPER_PLANETBEACON)
       	{
       		dbMapRetrievePlanet(specopd[a].plnid, &planetd);
-          // changed by goemb to fix permanent PB on planets when they change from owner during the operation
-    			planetd.flags &= (~CMD_PLANET_FLAGS_BEACON);
+    			planetd.flags ^= CMD_PLANET_FLAGS_BEACON;
     			dbMapSetPlanet(specopd[a].plnid, &planetd);
       	}
       	

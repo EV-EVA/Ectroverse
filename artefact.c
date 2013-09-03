@@ -12,30 +12,30 @@ Ectroverse Artefacts round #1 - ...
 
 unsigned char *artefactName[ARTEFACT_NUMUSED] =
 {
-"Network Backbone", //ARTEFACT_1_BIT 1
-"Brainsapper", //ARTEFACT_2_BIT 2
-"Operations Guidebook", //ARTEFACT_4_BIT 4
-"Painful Military Parade", // ARTEFACT_8_BIT 8
+"Observation Station", //ARTEFACT_1_BIT 1
+"Altar of Storms", //ARTEFACT_2_BIT 2
+"Ether Laboratory", //ARTEFACT_4_BIT 4
+"Ether Palace", // ARTEFACT_8_BIT 8
 
-"Ghost Amulet", //ARTEFACT_16_BIT 16
-"Mineral Throne", //ARTEFACT_32_BIT 32
-"Energy Paradigm", //ARTEFACT_64_BIT 64
-"Fussion Powered Hyperdrive", //ARTEFACT_128_BIT 128
+"Tachyon Pulsar", //ARTEFACT_16_BIT 16
+"Ether Solar Formula", //ARTEFACT_32_BIT 32
+"Arrakis Spice Melange", //ARTEFACT_64_BIT 64
+"Apotheosis of War", //ARTEFACT_128_BIT 128
 
 "Ether Gardens", //ARTEFACT_ETHER_BIT 256
 };
 
 unsigned char *artefactDescription[ARTEFACT_NUMUSED] =
 {
-"The <b>Network Backbone</b> increases by +1%, the research maximum of every field except technology, for every 10%% of technology research!",
-"The <b>Brainsapper</b> decreases your Agent and Psychic readiness to 75% and doubles the strength of Phantoms!",
-"The <b>Operations Guidebook</b> increases the operations research maximum by 30%!",
-"The <b>Painful Military Parade</b> halves your units upkeep and reduces your energy production by 30%!",
+"The <b>Observation Station</b> grants everyone the Observe Planet operation!",
+"The <b>Altar of Storms</b> increases by 25% the attack strength of all your military units when defending!!",
+"The <b>Ether Laboratory</b> increases the Energy and Military research maximum by 25%!",
+"The <b>Ether Palace</b> increases your energy production by 25%!",
 
-"The <b>Ghost Amulet</b> increases the strength of Ghostships by 20%!",
-"The <b>Mineral Throne</b>, you rule by right on the Mineral Throne, but your Mineral production is reduces by 40%!",
-"The <b>Energy Paradigm</b> halves the decay of Energy!",
-"The <b>Fussion Powered Hyerdrive</b> decreases the output of Fission reactors by 20% and increases the travel speed by 30%!", 
+"The <b>Tachyon Pulsar</b> doubles the strenght of Phantoms and increases your unit upkeep by 50%!",
+"The <b>Ether Solar Formula</b>, increases the output of Solar Collectors by 30%!",
+"The <b>Arrakis Spice Melange</b> increases the production of Mineral by 50%!",
+"The <b>Apotheosis of War</b> reduces by half the readiness loss for the Energy Surge incantation!", 
 
 "The <b>Ether Gardens</b> increase your energy production by 10%!",
 };
@@ -44,11 +44,11 @@ unsigned char *artefactImage[ARTEFACT_NUMUSED] =
 {
 "artimg4.gif",
 "artimg12.gif",
-"artimg10.gif",
-"artimg5.gif",
+"ether3.gif",
+"ether2.gif",
 
 "artimg3.gif",
-"mineralthrone.gif",
+"ether4.gif",
 "artimg2.gif",
 "artimg14.gif",
 

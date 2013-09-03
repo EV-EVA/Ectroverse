@@ -6183,12 +6183,12 @@ void iohttpFunc_spec( svConnectionPtr cnt )
  svSendPrintf( cnt, "<b>Operations</b><br>" );
  for( a = 0 ; a < CMD_AGENTOP_NUMUSED ; a++ )
  {
- 	//ARTI CODE Nuker
- 	//if(!((maind.artefacts & ARTEFACT_NUK_BIT)&&(a == CMD_OPER_NUKEPLANET )))
- 	//{
+ 	//ARTI CODE give agent op all races
+ 	if(!((maind.artefacts & ARTEFACT_1_BIT)&&(a == CMD_OPER_OBSERVEPLANET )))
+ 	{
 	  if( !( specopAgentsAllowed( a, maind.raceid ) ) )
 	  	continue;
-	//}
+	}
   b = cmdGetOpPenalty( maind.totalresearch[CMD_RESEARCH_OPERATIONS], cmdAgentopTech[a] );
   if( b == -1 )
    svSendPrintf( cnt, "<input type=\"radio\" name=\"op\" value=\"%d\" disabled> %s<br>&nbsp;&nbsp;&nbsp;<font color=\"#FF0000\">Unavailable</font><br>", a, cmdAgentopName[a] );

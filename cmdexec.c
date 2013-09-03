@@ -1414,10 +1414,10 @@ int cmdExecSendFleetInfos( int id, int plnid, int *fr )
   else if( b == -3 )
     return -3;
 
- // CODE for artefact that increases travel speed by n%
+ // CODE for artefact that decreases/increases travel speed by n%
   
-   if ( maind.artefacts & ARTEFACT_128_BIT)
-   fa = cmdRace[maind.raceid].speed * 1.3;
+   if ( maind.artefacts & ARTEFACT_8_BIT)
+   fa = cmdRace[maind.raceid].speed * 0.75;
    else
    fa = cmdRace[maind.raceid].speed;
  
@@ -1483,8 +1483,8 @@ int cmdExecSendFleet( int id, int x, int y, int z, int order, int *sendunit )
   
   // CODE_speed_arti
   
-    if ( maind.artefacts & ARTEFACT_128_BIT)
-    fa = cmdRace[maind.raceid].speed * 1.3;
+    if ( maind.artefacts & ARTEFACT_8_BIT)
+    fa = cmdRace[maind.raceid].speed * 0.75;
     else
     fa = cmdRace[maind.raceid].speed;
               
@@ -1572,8 +1572,8 @@ int cmdExecSendAgents( int id, int x, int y, int z, int order, int agents )
 
 // CODE_speed_arti
 
-  if ( maind.artefacts & ARTEFACT_128_BIT)
-  fa = cmdRace[maind.raceid].speed * 1.3;
+  if ( maind.artefacts & ARTEFACT_8_BIT)
+  fa = cmdRace[maind.raceid].speed * 0.75;
   else
   fa = cmdRace[maind.raceid].speed;
             
@@ -1656,8 +1656,8 @@ int cmdExecSendGhosts( int id, int x, int y, int z, int order, int ghosts )
 
 // CODE_speed_arti
 
-  if ( maind.artefacts & ARTEFACT_128_BIT)
-  fa = cmdRace[maind.raceid].speed * 1.3;
+  if ( maind.artefacts & ARTEFACT_8_BIT)
+  fa = cmdRace[maind.raceid].speed * 0.75;
   else
   fa = cmdRace[maind.raceid].speed;
             
@@ -1826,8 +1826,8 @@ int cmdExecChangeFleet( int id, int x, int y, int z, int order, int fltid )
 
 // CODE_speed_arti
 
-  if ( maind.artefacts & ARTEFACT_128_BIT)
-  fa = cmdRace[maind.raceid].speed * 1.3;
+  if ( maind.artefacts & ARTEFACT_8_BIT)
+  fa = cmdRace[maind.raceid].speed * 0.75;
   else
   fa = cmdRace[maind.raceid].speed;
             
