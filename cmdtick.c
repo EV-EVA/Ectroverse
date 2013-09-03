@@ -707,32 +707,19 @@ svDebugTickPass = 6;
           fa = cmdRace[maind.raceid].researchmax[a];
 
 	// CODE_ARTI
-      if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_ENERGY ) )
-        fa += 25.0;
-		
-	// CODE_ARTI
       if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_MILITARY ) )
         fa += 25.0;		
      
         // put this arti last, you need the other ones calculated before this one.
-<<<<<<< HEAD
-        /*    //ARTI CODE network backbone but this block back on to put it back in    
-        if(maind.artefacts & ARTEFACT_1_BIT)
-=======
          /*   //ARTI CODE network backbone    
         if(maind.artefacts & ARTEFACT_*_BIT)
->>>>>>> Updated to Round #8 code
         {
            // exclude tech research from having this bonus (otherwise there is no cap)
            if( a != CMD_RESEARCH_TECH)
                {
                 fa += addedFromTech;
                }
-<<<<<<< HEAD
-        } */
-=======
         }*/
->>>>>>> Updated to Round #8 code
 
           b = fa * ( 1.0 - exp( (double)maind.research[a] / ( -10.0 * (double)maind.networth ) ) );
           if( b > maind.totalresearch[a] )
