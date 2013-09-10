@@ -559,7 +559,7 @@ void iohttpFunc_main( svConnectionPtr cnt )
   if( (cnt->dbuser)->flags & CMD_USER_FLAGS_KILLED )
   {
    iohttpBase( cnt, 0 );
-   svSendString( cnt, "Your have been killed!<br><br><a href=\"register2\">Register this account again</a><br><br>" );
+   svSendString( cnt, "Your Home Planet has been conquered and whiped out, your faction has been destroyed!<br><br><a href=\"register2\">Rejoin the Galaxy</a><br><br>" );
    num = dbUserNewsList( id, &newsp );
    newsd = newsp;
    if( !( num ) )
