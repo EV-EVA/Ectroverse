@@ -1416,9 +1416,9 @@ int cmdExecSendFleetInfos( int id, int plnid, int *fr )
 
  // CODE for artefact that decreases/increases travel speed by n%
   
-   if ( maind.artefacts & ARTEFACT_8_BIT)
+ /*  if ( maind.artefacts & ARTEFACT_8_BIT)
    fa = cmdRace[maind.raceid].speed * 0.75;
-   else
+   else */
    fa = cmdRace[maind.raceid].speed;
  
   ret = (int)( (float)a / fa ) >> 8;
@@ -1481,11 +1481,11 @@ int cmdExecSendFleet( int id, int x, int y, int z, int order, int *sendunit )
     return -3;
 
   
-  // CODE_speed_arti
+ // CODE for artefact that decreases/increases travel speed by n%
   
-    if ( maind.artefacts & ARTEFACT_8_BIT)
+ /*   if ( maind.artefacts & ARTEFACT_8_BIT)
     fa = cmdRace[maind.raceid].speed * 0.75;
-    else
+    else */
     fa = cmdRace[maind.raceid].speed;
               
   
@@ -1570,11 +1570,11 @@ int cmdExecSendAgents( int id, int x, int y, int z, int order, int agents )
   else if( b == -3 )
     return -3;
 
-// CODE_speed_arti
+ // CODE for artefact that decreases/increases travel speed by n%
 
-  if ( maind.artefacts & ARTEFACT_8_BIT)
+ /* if ( maind.artefacts & ARTEFACT_8_BIT)
   fa = cmdRace[maind.raceid].speed * 0.75;
-  else
+  else */
   fa = cmdRace[maind.raceid].speed;
             
   
@@ -1654,11 +1654,11 @@ int cmdExecSendGhosts( int id, int x, int y, int z, int order, int ghosts )
   else if( b == -3 )
     return -3;
 
-// CODE_speed_arti
+ // CODE for artefact that decreases/increases travel speed by n%
 
-  if ( maind.artefacts & ARTEFACT_8_BIT)
+ /* if ( maind.artefacts & ARTEFACT_8_BIT)
   fa = cmdRace[maind.raceid].speed * 0.75;
-  else
+  else  */
   fa = cmdRace[maind.raceid].speed;
             
     
@@ -1824,11 +1824,11 @@ int cmdExecChangeFleet( int id, int x, int y, int z, int order, int fltid )
   fleetd.source = ( b << 20 ) + ( a << 8 );
   fleetd.order = order;
 
-// CODE_speed_arti
+ // CODE for artefact that decreases/increases travel speed by n%
 
-  if ( maind.artefacts & ARTEFACT_8_BIT)
+ /* if ( maind.artefacts & ARTEFACT_8_BIT)
   fa = cmdRace[maind.raceid].speed * 0.75;
-  else
+  else */
   fa = cmdRace[maind.raceid].speed;
             
 
