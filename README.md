@@ -14,10 +14,9 @@ Login with:
 admin
 password
 
-To change this, look for lines 2233 and 2238 in cmd.c file.
+To change the username, password and server ports, you can see the config.h file and make the appropriate edits.
 
 KNOWN BUGS - Very annoying and need to go:
-* Merge Fleet does not work. Splitting does.
 * ... ?
 
 

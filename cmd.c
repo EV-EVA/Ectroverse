@@ -2221,25 +2221,6 @@ int cmdExecute( svConnectionPtr cnt, int *cmd, void *buffer, int size )
   return -2;
 }
 
-
-
-
-
-
-#define CMD_ADMIN_NUM 1
-
-unsigned char cmdAdminName[CMD_ADMIN_NUM][32] =
-{
-"admin"
-};
-
-unsigned char cmdAdminPass[CMD_ADMIN_NUM][32] =
-{
-"password"
-};
-
-
-
 int cmdInit()
 {
   int a, id;

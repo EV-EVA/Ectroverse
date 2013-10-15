@@ -32,7 +32,7 @@
 #define STOP_TIME "May 14 16:00"
 
 
-#define ROUND_ID (8)
+#define ROUND_ID (9)
 #define DELAY_TIME (00)
 
 #define SV_TICK_FILE "/var/www/ectroverse.org/data/ticks"
@@ -49,4 +49,11 @@
 
 #define LOGS_DIRECTORY "/var/www/ectroverse.org/logs"
 
+#define CMD_ADMIN_NUM 1
+static unsigned char cmdAdminName[CMD_ADMIN_NUM] [32] = {
+"admin" };
+static unsigned char cmdAdminPass[CMD_ADMIN_NUM] [32] = {
+"password" };
 
+#define HTTP_PORT 9122
+#define HTTP_PORT_MAP 9135
