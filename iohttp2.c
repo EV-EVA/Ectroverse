@@ -391,7 +391,7 @@ void iohttpFunc_register2( svConnectionPtr cnt )
 
  svSendString( cnt, "<form action=\"register3\" method=\"POST\"><br><br>Empire number<br><i>Leave blank to join a random empire</i><br><input type=\"text\" name=\"empire\"><br><br>" );
  svSendString( cnt, "Empire password<br><i>Only required if defined by the leader of the empire to join.</i><br><input type=\"text\" name=\"fampass\"><br><br>" );
- svSendString( cnt, "Faction race<br><i>The race of your people define many characteristics affecting different aspects of your faction.</i> - <a href=\"races\" target=\"_blank\">See races</a><br><select name=\"race\">" );
+ svSendString( cnt, "<br><br><br>Faction race<br><br><br><i>The race of your people define many characteristics affecting different aspects of your faction.</i> - <a href=\"races\" target=\"_blank\">See races</a><br><select name=\"race\">" );
  for( a = 0 ; a < CMD_RACE_NUMUSED-1 ; a++ )
   svSendPrintf( cnt, "<option value=\"%d\">%s", a, cmdRaceName[a] );
  svSendString( cnt, "</select><br><br>" );
@@ -559,7 +559,7 @@ void iohttpFunc_main( svConnectionPtr cnt )
   if( (cnt->dbuser)->flags & CMD_USER_FLAGS_KILLED )
   {
    iohttpBase( cnt, 0 );
-   svSendString( cnt, "Your Home Planet has been conquered and whiped out, your faction has been destroyed!<br><br><a href=\"register2\">Rejoin the Galaxy</a><br><br>" );
+   svSendString( cnt, "Your have been killed!<br><br><a href=\"register2\">Register this account again</a><br><br>" );
    num = dbUserNewsList( id, &newsp );
    newsd = newsp;
    if( !( num ) )
@@ -4123,7 +4123,7 @@ void iohttpFunc_player( svConnectionPtr cnt )
   return;
  }
  iohttpBodyInit( cnt, main2d.faction );
- svSendPrintf( cnt, "<table border=\"0\"><tr><td><a href=\"empire?id=%d\">Empire : #%d</a><br>Networth : %lld<br>Planets : %d<br>Race : %s<br>Forum tag : <b>%s</b><br>Population : %lld0<br>Home planet : %d,%d:%d<br><br>Faction ID : %d<br><a href=\"mail?to=%d\">Send a message</a><br><a href=\"map?e0=4&u0=%d&c0=5\">Display planets on map</a><br><a href=\"map?e0=1&u0=&c0=3&e1=4&u1=%d&c1=5\">Display planets on map with yours</a><br><a href=\"playerlist?id=%d\">See planets list</a><br><br></td></tr></table>", main2d.empire, main2d.empire, main2d.networth, main2d.planets, cmdRaceName[main2d.raceid], main2d.forumtag, main2d.ressource[CMD_RESSOURCE_POPULATION], ( main2d.home >> 8 ) & 0xFFF, main2d.home >> 20, main2d.home & 0xFF, playerid, playerid, playerid, playerid, playerid );
+ svSendPrintf( cnt, "<table border=\"0\"><tr><td><a href=\"empire?id=%d\">Empire : #%d</a><br>Networth : %lld<br>Planets : %d<br>Race : %s<br>Forum tag : <b>%s</b><br>Population : %lld0<br>Home planet : %d,%d:%d<br><br>Faction ID : %d<br><a href=\"mail?to=%d\">Send a message</a><br><a href=\"map?e0=4&u0=%d&c0=5\">Display planets on map</a><br><a href=\"map?e0=1&u0=&c0=3&e1=4&u1=%d&c1=5\">Display planets on map with yours</a><br><br><br></td></tr></table>", main2d.empire, main2d.empire, main2d.networth, main2d.planets, cmdRaceName[main2d.raceid], main2d.forumtag, main2d.ressource[CMD_RESSOURCE_POPULATION], ( main2d.home >> 8 ) & 0xFFF, main2d.home >> 20, main2d.home & 0xFF, playerid, playerid, playerid, playerid );
 
  if( dbUserDescRetrieve( playerid, &descd ) >= 0 )
  {
@@ -5504,14 +5504,14 @@ void iohttpFunc_fleetsmerge( svConnectionPtr cnt)
  	}
  	svSendPrintf(cnt, "</tr><tr>");
  	svSendString(cnt, "</table>");
- 	svSendPrintf(cnt, "<input type=\"submit\" value=\"Merge\"");
+ 	svSendPrintf(cnt, "<input type=\"submit\" value=\"Merge\">");
  	svSendString(cnt, "</form>");
  }
  else
  	svSendString(cnt, "<i>Error while merging</i><br>You haven't selected any fleet!");
  
- svSendString(cnt, "<br><a href=\"fleets\">Return to fleets</a>");
- svSendString(cnt, "currently offline hit the back button now!");
+ svSendString(cnt, "<br><a href=\"fleets\">Return to fleet overview</a>");
+
  free(pFleet);
  iohttpBodyEnd( cnt );
 }

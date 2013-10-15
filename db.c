@@ -258,7 +258,7 @@ FILE *dbFileGenOpen( int num )
 	if(num == DB_FILE_USERS)
 		sprintf(szSource, dbFileList[num], USER_DIRECTORY);
 	else
-		sprintf(szSource, dbFileList[num]);
+		sprintf(szSource, dbFileList[num], DB_DIRECTORY);
 	if( dbFilePtr[num] )
     return dbFilePtr[num];
     
