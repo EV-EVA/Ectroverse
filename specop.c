@@ -208,11 +208,7 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	    return;
 	  if( dbUserMainRetrieve( id, &maind ) < 0 )
 	    return;
-<<<<<<< HEAD
-	  if( ( maind.readiness[2] < 0 ) || (( planetd.owner == id )&&(fleetd->order!=CMD_FLEET_ORDER_PLANETBEACON) && (fleetd->order!=CMD_FLEET_ORDER_NUKEPLANET)) ||  !( svTickStatus ) )
-=======
 	   if( ( maind.readiness[2] < 0 ) || (( planetd.owner == id )&&(fleetd->order!=CMD_FLEET_ORDER_PLANETBEACON) && (fleetd->order!=CMD_FLEET_ORDER_NUKEPLANET)) ||  !( svTickStatus ) )
->>>>>>> Updated to Round #8 code
 	  {
 	  	cmdUserNewsAdd( id, newd, postnew );
 	    return;

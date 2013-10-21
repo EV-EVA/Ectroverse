@@ -276,6 +276,9 @@ int main()
   fwrite( &a, 1, sizeof(int), file );
   a = MAP_FAMILIES * MAP_FAMMEMBERS;
   fwrite( &a, 1, sizeof(int), file );
+  a = -1;
+  fwrite( &a, 1, sizeof(int), file );
+  fwrite( &a, 1, sizeof(int), file );
   fwrite( nullb, 1, 32, file );
 
   // systems

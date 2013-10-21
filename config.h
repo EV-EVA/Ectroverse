@@ -10,13 +10,8 @@
 #define SERVER_NAGLE_BUFFERING 0
 
 
-// #define SERVER_SEND_ADDBUFFERING (32768)
+#define AUTOVICTORYIN (16)
 
-/*
-#define SERVER_REPORT_CONNECT 0
-#define SERVER_REPORT_CLOSE 0
-#define SERVER_REPORT_IGNOREDHEADER 0
-*/
 #define SERVER_REPORT_CONNECT 0
 #define SERVER_REPORT_CLOSE 0
 #define SERVER_REPORT_IGNOREDHEADER 0
@@ -27,7 +22,7 @@
 //1 = amsterdam 0 = gmt -4 = canada ... etc
 #define SERVER_TIME_ZONE 1
 
-#define SV_TICK_TIME (600)
+#define SV_TICK_TIME (5)
 #define START_TIME " Apr 16 20:00"
 #define STOP_TIME "May 14 16:00"
 
@@ -35,19 +30,19 @@
 #define ROUND_ID (9)
 #define DELAY_TIME (00)
 
-#define SV_TICK_FILE "/var/www/ectroverse.org/data/ticks"
+#define SV_TICK_FILE "/media/stephen/mini/git/evsource/data/ticks"
 
-#define DB_DIRECTORY "/var/www/ectroverse.org/data"
+#define DB_DIRECTORY "/media/stephen/mini/git/evsource/data"
 
-#define PUBLIC_FORUM_DIRECTORY "/var/www/ectroverse.org/data"
+#define PUBLIC_FORUM_DIRECTORY "/media/stephen/mini/git/evsource/data"
 
-#define USER_DIRECTORY "/var/www/ectroverse.org/data"
+#define USER_DIRECTORY "/media/stephen/mini/git/evsource/data"
 
-#define IOHTTP_FILES_DIRECTORY "/var/www/ectroverse.org/images"
+#define IOHTTP_FILES_DIRECTORY "/media/stephen/mini/git/evsource/images"
 
-#define IOHTTP_READ_DIRECTORY "/var/www/ectroverse.org/read"
+#define IOHTTP_READ_DIRECTORY "/media/stephen/mini/git/evsource/read"
 
-#define LOGS_DIRECTORY "/var/www/ectroverse.org/logs"
+#define LOGS_DIRECTORY "/media/stephen/mini/git/evsource/logs"
 
 #define CMD_ADMIN_NUM 1
 static unsigned char cmdAdminName[CMD_ADMIN_NUM] [32] = {

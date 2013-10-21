@@ -1,4 +1,9 @@
+#Check for colorgcc installation, use it if found.
+ifeq ($(wildcard /usr/bin/colorgcc),) 
 CC = gcc
+else
+CC = colorgcc
+endif
 DEFS = 
 FLAGS = -s -mtune=core2 -O2 --fast-math -Wall  -fno-strict-aliasing
 LIBS = -lm

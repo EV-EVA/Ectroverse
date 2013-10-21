@@ -1,0 +1,14 @@
+#stray Object files
+*.o
+*.raw
+
+
+#Program files
+html/
+data/
+users/
+logs/
+read/
+sv
+map
+
