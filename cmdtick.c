@@ -12,6 +12,8 @@ void cmdTickGenRanks()
   dbUserMainPtr mainp;
   dbUserPtr user;
   int *stats;
+  int wa, wnum;
+  int *rels;
   int artefacts[ARTEFACT_NUMUSED], artsnum;
 
 
@@ -39,6 +41,18 @@ void cmdTickGenRanks()
       continue;
     if( !( empirep[b].numplayers ) )
       continue;
+
+if( ( wnum = dbEmpireRelsList( b, &rels ) ) < 0 )
+    return -3;
+wnum <<= 2;
+for( wa = 0 ; wa < wnum ; wa += 4 ) {
+    if( rels[wa+1] == CMD_RELATION_WAR ) {
+        if( (rels[wa] + AUTOENDWARS) <= svTickNum ) {
+            cmdExecDelRelation( b, wa/4 );
+        } 
+    }
+}
+free( rels );
 
     stats[c+0] = b;
 // calc NW, planets and empire artefacts
