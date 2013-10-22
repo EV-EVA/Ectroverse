@@ -24,6 +24,20 @@ have been going forward after something, pursuing some goal.  Enlightenment is d
 - Charlotte Joko Beck
 */
 
+enum 
+{
+MAP_SIZEX,
+MAP_SIZEY,
+MAP_SYSTEMS,
+MAP_PLANETS,
+MAP_EMPIRES,
+MAP_EMEMBERS,
+MAP_CAPACITY,
+MAP_RESERVED,
+MAP_ARTITIMER,
+MAP_TIMEMPIRE,
+MAP_TOTAL_INFO,
+};
 
 typedef struct
 {
@@ -184,6 +198,7 @@ int dbEmpireMessageRetrieve( int id, int num, unsigned char *text );
 extern int dbMapBInfoStatic[];
 
 int dbMapRetrieveMain( int *binfo );
+int dbMapSetMain( int *binfo );
 
 typedef struct
 {

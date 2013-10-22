@@ -87,6 +87,7 @@ void svSendStatic( svConnectionPtr cnt, void *data, int size );
 extern int svTickNum;
 extern int svTickTime;
 extern int svTickStatus;
+extern int svTickAutoStart;
 extern int svRoundEnd;
 
 extern int svDebugTickPass;
