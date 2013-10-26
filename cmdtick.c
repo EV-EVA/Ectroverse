@@ -751,6 +751,10 @@ svDebugTickPass = 6;
           fa = cmdRace[maind.raceid].researchmax[a];
 
 	// CODE_ARTI
+      if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_ENERGY ) )
+        fa += 25.0;
+		
+	// CODE_ARTI
       if( ( maind.artefacts & ARTEFACT_4_BIT ) && ( a == CMD_RESEARCH_MILITARY ) )
         fa += 25.0;		
      
@@ -779,11 +783,11 @@ svDebugTickPass = 7;
     fa = ( 12.0 * (double)(cmdTickProduction[CMD_BUILDING_SOLAR]) / specopSolarCalc( user->id ) );
     if( cmdRace[maind.raceid].special & CMD_RACE_SPECIAL_SOLARP15 )
       fa *= 1.15;
-      
-      //ARTI CODE Ether Palace
-	if(maind.artefacts & ARTEFACT_32_BIT)
-		fa *= 1.30;
-		
+
+//ARTI CODE Ether Solar
+	if((maind.artefacts & ARTEFACT_32_BIT)&&( a == CMD_BUILDING_SOLAR))  
+	fa *= 1.30;
+
     fb = ( 40.0 * (double)(cmdTickProduction[CMD_BUILDING_FISSION]) );
    	
    	 	
@@ -800,7 +804,6 @@ svDebugTickPass = 7;
 			
 	fb = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ENERGY] * ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_ENERGY] );
 
-	
   maind.infos[4] = (long long int)( fa * fb );
     
     /* This block is for the automated funding from energy production if used add the funding into the council with maind.infos
