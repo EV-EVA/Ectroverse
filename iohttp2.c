@@ -4227,7 +4227,7 @@ void iohttpFunc_planet( svConnectionPtr cnt )
  unsigned char *planetstring;
  unsigned char *unstationstring;
  unsigned char *plgivestring;
- static unsigned char *bonusname[4] = { "Solar energy", "Mineral", "Crystal", "Ectrolium" };
+ static unsigned char *bonusname[5] = { "Solar energy", "Mineral", "Crystal", "Ectrolium", "Fission" };
 
  iohttpBase( cnt, 1 );
  if( ( id = iohttpIdentify( cnt, 1|2 ) ) < 0 )
