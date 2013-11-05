@@ -526,11 +526,11 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	        if( buildd )
 	          free( buildd );
 	      }
-	      i = 25 + rand() % 25;
+	      i = rand() % 25;
               if( !( rand() & 7 ) )
-                i += rand() % 100;
+                i += rand() % 15;
               if( !( rand() & 15 ) )
-                i += rand() % 100;
+                i += rand() % 20;
 	      newd[10] = 1;
 	      planetd.flags &= CMD_PLANET_FLAGS_HOME;
 	      a = planetd.owner;
