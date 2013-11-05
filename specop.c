@@ -538,8 +538,7 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	      planetd.special[0] = 4;
 	      planetd.special[1] = i;
 	      planetd.construction = 0;
-	      i = planetd.size * (float)( ( rand() % 35 ) / 100 );
-	      planetd.size = i;
+	      planetd.size = ( planetd.size - (int)( planetd.size * (float)( rand() % 35 ) / 100.0 ) );
 	      planetd.population = planetd.size * CMD_POPULATION_BASE_FACTOR;
 	      memset( planetd.building, 0, 16*sizeof(int) );
 	      memset( planetd.unit, 0, 16*sizeof(int) );
