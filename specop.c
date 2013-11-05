@@ -534,7 +534,7 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	      newd[10] = 1;
 	      planetd.flags &= CMD_PLANET_FLAGS_HOME;
 	      a = planetd.owner;
-	      if( artefactPrecense( dbMainPlanetPtr planetd ) < 0 ) {
+	      if( artefactPrecense( &planetd ) < 0 ) {
 	        if( ( i > 0 ) && ( planetd.special[0] == -1 ) && ( planetd.owner != -1 ) ) {
 	          planetd.special[0] = 4;
 	          planetd.special[1] = i;
