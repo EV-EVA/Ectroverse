@@ -652,9 +652,9 @@ void iohttpFunc_menu( svConnectionPtr cnt )
  if( dbUserMainRetrieve( id, &maind ) < 0 )
   maind.empire = -1;
 
- svSendString( cnt, "<br><table cellspacing=\"0\" cellpadding=\"0\" width=\"150\" background=\"i36.jpg\" border=\"0\" align=\"center\"><tr><td><img height=\"40\" src=\"i18.jpg\" width=\"150\"></td></tr><tr><td background=\"i23.jpg\" height=\"20\"><b><font face=\"Tahoma\" size=\"2\">" );
+ svSendString( cnt, "<br><table cellspacing=\"0\" cellpadding=\"0\" width=\"150\" background=\"i36.jpg\" border=\"0\" align=\"center\"><tr><td><img height=\"40\" src=\"i18.jpg\" width=\"150\"></td></tr><tr><td background=\"i23.jpg\" height=\"20\"><b><font face=\"Narkisim\" size=\"2\">" );
 
- svSendString( cnt, "<a href=\"hq\" target=\"main\">Headquarters</a></font></b></td></tr><tr><td background=\"i36.jpg\"><table width=\"125\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\"><tr><td><b><font face=\"Tahoma\" size=\"2\">" );
+ svSendString( cnt, "<a href=\"hq\" target=\"main\">Headquarters</a></font></b></td></tr><tr><td background=\"i36.jpg\"><table width=\"125\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\"><tr><td><b><font face=\"Narkisim\" size=\"2\">" );
  svSendString( cnt, "<a href=\"council\" target=\"main\">Council</a><br><a href=\"units\" target=\"main\">Units</a><br><a href=\"market\" target=\"main\">Market</a><br><a href=\"planets\" target=\"main\">Planets</a><br>" );
  svSendPrintf( cnt, "<a href=\"empire\" target=\"main\">Empire</a><br>&nbsp;&nbsp;- <a href=\"forum?forum=%d\" target=\"main\">Forum</a><br>&nbsp;&nbsp;- <a href=\"famaid\" target=\"main\">Send aid</a><br>&nbsp;&nbsp;- <a href=\"famgetaid\" target=\"main\">Receive aid</a><br>&nbsp;&nbsp;- <a href=\"famnews\" target=\"main\">News</a><br>&nbsp;&nbsp;- <a href=\"famrels\" target=\"main\">Relations</a><br>", maind.empire + 100 );
  svSendString( cnt, "<a href=\"fleets\" target=\"main\">Fleets</a><br>" );
@@ -662,7 +662,7 @@ void iohttpFunc_menu( svConnectionPtr cnt )
  svSendString( cnt, "<a href=\"research\" target=\"main\">Research</a><br>" );
  svSendString( cnt, "<a href=\"spec\" target=\"main\">Operations</a><br>" );
 
- svSendString( cnt, "</font></b></td></tr></table></td></tr><tr><td background=\"i36.jpg\"><img height=\"15\" src=\"i53.jpg\" width=\"150\"></td></tr><tr><td background=\"i36.jpg\"><table width=\"125\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\"><tr><td><b><font face=\"Tahoma\" size=\"2\">" );
+ svSendString( cnt, "</font></b></td></tr></table></td></tr><tr><td background=\"i36.jpg\"><img height=\"15\" src=\"i53.jpg\" width=\"150\"></td></tr><tr><td background=\"i36.jpg\"><table width=\"125\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\"><tr><td><b><font face=\"Narkisim\" size=\"2\">" );
  svSendString( cnt, "<a href=\"mail?type=0\" target=\"main\">Messages</a><br><a href=\"rankings\" target=\"main\">Faction rankings</a><br><a href=\"famranks\" target=\"main\">Empire rankings</a><br>" );
  svSendString( cnt, "<a href=\"forum\" target=\"main\">Forums</a><br>" );
  svSendString( cnt, "<a href=\"account\" target=\"main\">Account</a><br>" );

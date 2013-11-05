@@ -39,12 +39,12 @@
 */
 
 
-#define MAP_SIZEX (35)
-#define MAP_SIZEY (35)
-#define MAP_SYSTEMS (199)
+#define MAP_SIZEX (95)
+#define MAP_SIZEY (95)
+#define MAP_SYSTEMS (850)
 
-#define MAP_FAMILIES (9)
-#define MAP_FAMMEMBERS (4)
+#define MAP_FAMILIES (51)
+#define MAP_FAMMEMBERS (1)
 
 #define MAP_ARTEFACTS (9)
 
@@ -58,10 +58,10 @@
 
 
 
-#define MAP_RESOURCES (25+20+10+8)
+#define MAP_RESOURCES (21+17+10+8)
 
 // solar, mineral, crystal, ectrolium
-int map_resources_gen[4] = { 24, 23, 17, 10 };
+int map_resources_gen[4] = { 21, 17, 10, 8 };
 int map_resources_posx[MAP_RESOURCES];
 int map_resources_posy[MAP_RESOURCES];
 int map_resources_type[MAP_RESOURCES];

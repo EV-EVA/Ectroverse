@@ -702,6 +702,10 @@ svDebugTickPass = 5;
     	if( cmdRace[maind.raceid].special & CMD_RACE_SPECIAL_POPRESEARCH )
         	fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
 		
+// CODE_ARTEFACT research points per building type
+		if( ( maind.artefacts & ARTEFACT_32_BIT ) )
+        fa += ( (float)(maind.allocresearch[a]) * (float)( 400*cmdTickProduction[CMD_BUILDING_FISSION] + maind.fundresearch ) ) / 10000.0;		
+		
 	/*		//ARTI CODE Foohon Ancestry
 			if(maind.artefacts & ARTEFACT_*_BIT)
 				fa += ( (double)(maind.allocresearch[a]) * (double)maind.ressource[CMD_RESSOURCE_POPULATION] ) / ( 400.0 * 100.0 );
@@ -784,10 +788,6 @@ svDebugTickPass = 7;
     if( cmdRace[maind.raceid].special & CMD_RACE_SPECIAL_SOLARP15 )
       fa *= 1.15;
 
-//ARTI CODE Ether Solar
-	if((maind.artefacts & ARTEFACT_32_BIT)&&( a == CMD_BUILDING_SOLAR))  
-	fa *= 1.30;
-
     fb = ( 40.0 * (double)(cmdTickProduction[CMD_BUILDING_FISSION]) );
    	
    	 	
@@ -798,9 +798,6 @@ svDebugTickPass = 7;
 	if(maind.artefacts & ARTEFACT_ETHER_BIT)
 		fa *= 1.10;	
 
-	//ARTI CODE Ether Palace
-	if(maind.artefacts & ARTEFACT_8_BIT)
-		fa *= 1.25;	
 			
 	fb = cmdRace[maind.raceid].resource[CMD_RESSOURCE_ENERGY] * ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_ENERGY] );
 
@@ -841,15 +838,14 @@ svDebugTickPass = 8;
 		maind.totalunit[a] = 0;
 	}
 
+	
+	
 
     maind.infos[7] = 0;
     for( a = 0 ; a < CMD_UNIT_NUMUSED ; a++ )
 		{
 			maind.infos[7] += ((float)maind.totalunit[a])*cmdUnitUpkeep[a];
 		}
-		//ARTI CODE Romulan Military Outpost
-		if(maind.artefacts & ARTEFACT_16_BIT)
-		maind.infos[7] *= 1.5;	
 		maind.infos[8] = (1.0/35.0) * (float)maind.ressource[CMD_RESSOURCE_POPULATION]* ( 1.00 + 0.01 * (float)maind.totalresearch[CMD_RESEARCH_WELFARE] ) * (cmdRace[maind.raceid].growth);
     
     
@@ -893,11 +889,11 @@ svDebugTickPass = 8;
 	{
 		maind.infos[CMD_RESSOURCE_MINERAL] *= 1.50;
 	}
-/*	//ARTI CODE Ectrolim enhancement
-		if(maind.artefacts & ARTEFACT_xxxx_BIT)
+	//ARTI CODE Ectrolium enhancement
+		if(maind.artefacts & ARTEFACT_8_BIT)
 	{
-		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 1.50;
-	}	*/
+		maind.infos[CMD_RESSOURCE_ECTROLIUM] *= 1.75;
+	}	
 svDebugTickPass = 9;
 
 

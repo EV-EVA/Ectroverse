@@ -10,8 +10,8 @@
 #define SERVER_NAGLE_BUFFERING 0
 
 
-#define AUTOVICTORYIN (16)
-#define AUTOENDWARS (52)
+#define AUTOVICTORYIN (288)
+#define AUTOENDWARS (576)
 
 #define SERVER_REPORT_CONNECT 0
 #define SERVER_REPORT_CLOSE 0
@@ -28,7 +28,7 @@
 #define STOP_TIME "May 14 16:00"
 
 
-#define ROUND_ID (9)
+#define ROUND_ID (11)
 #define DELAY_TIME (00)
 
 #define SV_TICK_FILE "/var/www/ectroverse.org/data/ticks"
