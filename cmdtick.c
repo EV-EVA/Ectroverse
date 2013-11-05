@@ -704,7 +704,7 @@ svDebugTickPass = 5;
 		
 // CODE_ARTEFACT research points per building type
 		if( ( maind.artefacts & ARTEFACT_32_BIT ) )
-        fa += ( (float)(maind.allocresearch[a]) * (float)( 400*cmdTickProduction[CMD_BUILDING_FISSION] + maind.fundresearch ) ) / 10000.0;		
+		fa += ( (float)(maind.allocresearch[a]) * (float)( 400*cmdTickProduction[CMD_BUILDING_FISSION] ) ) / 10000.0;		
 		
 	/*		//ARTI CODE Foohon Ancestry
 			if(maind.artefacts & ARTEFACT_*_BIT)
