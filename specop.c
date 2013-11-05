@@ -535,7 +535,7 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	      planetd.flags &= CMD_PLANET_FLAGS_HOME;
 	      a = planetd.owner;
 	      planetd.owner = -1;
-	      if( ( i > 0 ) && ( planetd.special[0] == -1 ) ) {
+	      if( ( i > 0 ) && ( planetd.special[0] == -1 ) && ( planetd.owner != -1) ) {
 	        planetd.special[0] = 4;
 	        planetd.special[1] = i;
 	      }
