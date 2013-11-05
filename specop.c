@@ -534,13 +534,18 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	      newd[10] = 1;
 	      planetd.flags &= CMD_PLANET_FLAGS_HOME;
 	      a = planetd.owner;
-	      planetd.owner = -1;
-	      if( ( i > 0 ) && ( planetd.special[0] == -1 ) && ( planetd.owner != -1) ) {
-	        planetd.special[0] = 4;
-	        planetd.special[1] = i;
+	      if( artefactPrecense( dbMainPlanetPtr planetd ) < 0 ) {
+	        if( ( i > 0 ) && ( planetd.special[0] == -1 ) && ( planetd.owner != -1 ) ) {
+	          planetd.special[0] = 4;
+	          planetd.special[1] = i;
+	        } else if ( planetd.owner == -1 ) {
+		  planetd.special[0] = -1;
+	          planetd.special[0] = -1;
+	        }
+		planetd.size = ( planetd.size - (int)( planetd.size * (float)( rand() % 35 ) / 100.0 ) );
 	      }
+	      planetd.owner = -1;
 	      planetd.construction = 0;
-	      planetd.size = ( planetd.size - (int)( planetd.size * (float)( rand() % 35 ) / 100.0 ) );
 	      planetd.population = planetd.size * CMD_POPULATION_BASE_FACTOR;
 	      memset( planetd.building, 0, 16*sizeof(int) );
 	      memset( planetd.unit, 0, 16*sizeof(int) );
