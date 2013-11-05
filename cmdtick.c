@@ -482,9 +482,6 @@ svDebugTickPass = 5 + 10000;
       else if( planetd.special[0] == 3 )
         cmdTickProduction[CMD_BUILDING_REFINEMENT] += ( planetd.special[1] * planetd.building[CMD_BUILDING_REFINEMENT] ) / 100;
 
-      else if( planetd.special[0] == 4 )
-        cmdTickProduction[CMD_BUILDING_FISSION] += ( planetd.special[1] * planetd.building[CMD_BUILDING_FISSION] ) / 100;
-
     }
 
 

@@ -526,20 +526,11 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	        if( buildd )
 	          free( buildd );
 	      }
-	      i = 25 + rand() % 25;
-              if( !( rand() & 7 ) )
-                i += rand() % 100;
-              if( !( rand() & 15 ) )
-                i += rand() % 100;
 	      newd[10] = 1;
 	      planetd.flags &= CMD_PLANET_FLAGS_HOME;
 	      a = planetd.owner;
 	      planetd.owner = -1;
-	      planetd.special[0] = 4;
-	      planetd.special[1] = i;
 	      planetd.construction = 0;
-	      i = planetd.size * (float)( ( rand() % 35 ) / 100 );
-	      planetd.size = i;
 	      planetd.population = planetd.size * CMD_POPULATION_BASE_FACTOR;
 	      memset( planetd.building, 0, 16*sizeof(int) );
 	      memset( planetd.unit, 0, 16*sizeof(int) );
