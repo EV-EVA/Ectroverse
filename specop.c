@@ -538,7 +538,7 @@ void specopAgentsPerformOp( int id, int fltid, dbUserFleetPtr fleetd, long long 
 	        planetd.special[0] = 4;
 	        planetd.special[1] = i;
 	      }
-	      planetd.size = ( planetd.size - (int)( planetd.size * (float)( rand() % 35 ) / 100.0 ) );
+	      planetd.size = fmax( ( rand() % 95 ),( planetd.size - (int)( planetd.size * (float)( rand() % 35 ) / 100.0 ) ) );
 	      planetd.owner = -1;
 	      planetd.construction = 0;
 	      planetd.population = planetd.size * CMD_POPULATION_BASE_FACTOR;
