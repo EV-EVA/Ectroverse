@@ -6752,9 +6752,9 @@ void iohttpFunc_operation( svConnectionPtr cnt )
 // we need a table here.
  svSendString( cnt, "<i>" );
  if( specop == CMD_OPER_SPYTARGET )
-  svSendString( cnt, "Spy target will reveal information regarding an faction resources and readiness." );
+  svSendString( cnt, "Spy target will reveal information regarding the resources and readiness of the target." );
  else if( specop == CMD_OPER_OBSERVEPLANET )
-  svSendString( cnt, "Your agents will observe the planet and provide you with all information regarding it, habited or not." );
+  svSendString( cnt, "Your agents will observe the planet and try to provide you with all information regarding it, habited or not." );
  else if( specop == CMD_OPER_NETWORKVIRUS )
   svSendString( cnt, "Your agents will introduce viruses in the target faction computers network, destryoing a part of their research files and temporarily increasing buildings upkeep." );
  else if( specop == CMD_OPER_INFILTRATION )
@@ -6766,11 +6766,11 @@ void iohttpFunc_operation( svConnectionPtr cnt )
  else if( specop == CMD_OPER_MILITARYSAB )
   svSendString( cnt, "Through an enemy portal, your agents will attempt to reach the enemy fleet and destroy military units." );
  else if( specop == CMD_OPER_NUKEPLANET )
-  svSendString( cnt, "Your agents will place powerful nuclear devices on the surface of the planet, destroying all buildings and units, leaving in uninhabited." );
+  svSendString( cnt, "Your agents will place powerful nuclear devices on the surface of the planet, destroying all buildings and units, leaving it uninhabited." );
  else if( specop == CMD_OPER_HIGHINFIL )
   svSendString( cnt, "Performing this operation will provide you with detailled information about an faction for several weeks." );
  else if( specop == CMD_OPER_PLANETBEACON )
-  svSendString( cnt, "Planetary definition." );
+  svSendString( cnt, "A beacon will be placed on the planet, rendering the effects of the Dark Web obsolete." );
  svSendString( cnt, "</i><br><br>" );
 
  if( ( a = cmdExecSendFleetInfos( id, plnid, 0 ) ) < 0 )
