@@ -2102,7 +2102,8 @@ void iohttpFunc_units( svConnectionPtr cnt )
   svSendPrintf( cnt, "<tr><td valign=\"top\"><font color=\"#FFFFFF\">%s</font><br>", cmdUnitName[a] );
 
   // units pictures, we have them all hosted by blueD
-  
+      if( a < 13 )
+      svSendPrintf( cnt, "<img src=\"u%d.jpg\">", a );
   svSendString( cnt, "</td><td valign=\"top\" nowrap>" );
 
   if( resbuild[0] < 0 )
