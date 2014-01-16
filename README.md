@@ -20,4 +20,4 @@ KNOWN BUGS - Very annoying and need to go:
 * ... ?
 
 
-You can play the official Ectroverse at www.ectroverse.org. All help with maintaining the source is appreciated! 
+Play the offshoot NEctroverse at https://www.nectroverse.net/
